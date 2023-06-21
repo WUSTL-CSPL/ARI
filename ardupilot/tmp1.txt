@@ -1,0 +1,4 @@
+.curr_cpt_id:
+	.word 702
+.total_cpt_cnt:
+	.word 927

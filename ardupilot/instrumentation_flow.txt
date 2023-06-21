@@ -1,0 +1,10 @@
+#!/bin/bash
+source ./llvm-link_cmd.txt
+llvm-dis ./llvm-link.bc -o ./llvm-link.ll
+rm -rf ./llvm-link_def_use.bc
+opt -f -load ~/Desktop/llvm/build/lib/LLVMNova.so -nova ./llvm-link.bc >> llvm-link_def_use.bc
+rm -rf ./llvm-link_cond_br.bc
+opt -f -load ~/Desktop/llvm/build/lib/LLVMCollectCFVHints.so -collect-cond-branch-hints-pass ./llvm-link_def_use.bc >> llvm-link_cond_br.bc
+llc -filetype=obj ./llvm-link_cond_br.bc
+source ./single_bc_final_link.txt
+scp ./bin/arducopter pi@192.168.1.23:~

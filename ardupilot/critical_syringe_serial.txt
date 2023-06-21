@@ -1,0 +1,12 @@
+Serial_begin
+digitalWrite
+analogRead
+Serial_available
+millis
+usecs
+digitalRead
+toUInt
+Serial_read
+Serial_write
+pinMode
+delayMicroseconds

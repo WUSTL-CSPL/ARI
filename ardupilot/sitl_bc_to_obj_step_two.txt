@@ -1,0 +1,1 @@
+xargs -0 -n 1 llc -filetype=obj < <(tr \\n \\0 <sitl_bc_files.txt)

@@ -1,4 +1,4 @@
-# project  configured on Tue Jun 20 16:50:15 2023 by
+# project  configured on Tue Jun 20 23:53:46 2023 by
 # waf 1.9.2 (abi 99, python 2070cf0 on linux2)
 # using /home/ari-new-ae/conattest/ardupilot/modules/waf/waf-light --disable-tests configure --board=sitl
 #
@@ -17,13 +17,13 @@ sitl
 ---------------------------------------------
 Checking for program 'arm-linux-gnueabihf-ar'
 /usr/bin/arm-linux-gnueabihf-ar
-find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
 ---------------------------------------------
 Using toolchain
 arm-linux-gnueabihf
 ---------------------------------------------
 Checking for 'g++' (C++ compiler)
-find program=['arm-linux-gnueabihf-g++', 'arm-linux-gnueabihf-c++'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CXX' -> ['clang++']
+find program=['arm-linux-gnueabihf-g++', 'arm-linux-gnueabihf-c++'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CXX' -> ['clang++']
 ['clang++', '-dM', '-E', '-']
 out: #define _LP64 1
 #define __ATOMIC_ACQUIRE 2
@@ -346,9 +346,9 @@ from /home/ari-new-ae/conattest/ardupilot: Could not find gcc/g++ (only Clang), 
 not found
 ---------------------------------------------
 Checking for 'clang++' (C++ compiler)
-find program=['arm-linux-gnueabihf-gcc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CROSS_GCC' -> ['/usr/bin/arm-linux-gnueabihf-gcc']
-find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='TOOLCHAIN_CROSS_AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
-find program=['clang++'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CXX' -> ['clang++']
+find program=['arm-linux-gnueabihf-gcc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CROSS_GCC' -> ['/usr/bin/arm-linux-gnueabihf-gcc']
+find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='TOOLCHAIN_CROSS_AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['clang++'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CXX' -> ['clang++']
 ['clang++', '-dM', '-E', '-']
 out: #define _LP64 1
 #define __ATOMIC_ACQUIRE 2
@@ -667,12 +667,12 @@ out: #define _LP64 1
 #define linux 1
 #define unix 1
 
-find program=['llvm-ar', 'ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
-find program=['ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['llvm-ar', 'ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
 clang++
 ---------------------------------------------
 Checking for 'gcc' (C compiler)
-find program=['arm-linux-gnueabihf-gcc', 'arm-linux-gnueabihf-cc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CC' -> ['clang']
+find program=['arm-linux-gnueabihf-gcc', 'arm-linux-gnueabihf-cc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CC' -> ['clang']
 ['clang', '-dM', '-E', '-']
 out: #define _LP64 1
 #define __ATOMIC_ACQUIRE 2
@@ -995,9 +995,9 @@ from /home/ari-new-ae/conattest/ardupilot: Could not find gcc/g++ (only Clang), 
 not found
 ---------------------------------------------
 Checking for 'clang' (C compiler)
-find program=['arm-linux-gnueabihf-gcc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CROSS_GCC' -> ['/usr/bin/arm-linux-gnueabihf-gcc']
-find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='TOOLCHAIN_CROSS_AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
-find program=['clang'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='CC' -> ['clang']
+find program=['arm-linux-gnueabihf-gcc'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CROSS_GCC' -> ['/usr/bin/arm-linux-gnueabihf-gcc']
+find program=['arm-linux-gnueabihf-ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='TOOLCHAIN_CROSS_AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['clang'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='CC' -> ['clang']
 ['clang', '-dM', '-E', '-']
 out: #define _LP64 1
 #define __ATOMIC_ACQUIRE 2
@@ -1316,15 +1316,15 @@ out: #define _LP64 1
 #define linux 1
 #define unix 1
 
-find program=['llvm-ar', 'ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
-find program=['ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['llvm-ar', 'ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
+find program=['ar'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='AR' -> ['/usr/bin/arm-linux-gnueabihf-ar']
 clang
 ---------------------------------------------
 Checking for c flags '-MMD'
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_34c72e7d26df59c260fbcefe4dbea7c2/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_c5e18e9a794aa5f81b0055a08c275dc5/test.c[0m
 
 ['clang', '-MMD', '-DWAF_BUILD=1', '../../test.c', '-c', '-otest.c.1.o']
 yes
@@ -1333,7 +1333,7 @@ Checking for cxx flags '-MMD'
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_ce3327db936052291a901e5c2e6334b7/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_90e67a25b4851022e6cbfaef877f46ac/test.cpp[0m
 
 ['clang++', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '-DWAF_BUILD=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
 yes
@@ -1347,10 +1347,10 @@ Checking for need to link with librt
             clock_gettime(CLOCK_REALTIME, NULL);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_74a0a3b788d04877aa3a2ae0818fed56/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_bb9623d6f3dac6842cea06ba193118d2/test.cpp[0m
 
 ['clang++', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_74a0a3b788d04877aa3a2ae0818fed56/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_bb9623d6f3dac6842cea06ba193118d2/testbuild/sitl/testprog[0m
 
 ['clang++', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 not necessary
@@ -1364,10 +1364,10 @@ Checking for HAVE_CMATH_ISFINITE
           return std::isfinite(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_8e64dfa447686f3de738cdc516443ce7/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_5cf1578a48f16889725bd2863489908c/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_8e64dfa447686f3de738cdc516443ce7/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_5cf1578a48f16889725bd2863489908c/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1381,10 +1381,10 @@ Checking for HAVE_CMATH_ISINF
           return std::isinf(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_6dcb656b07441c49a22eecc6c213abd9/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_6534f471badd14bba23200d8ac6d2daf/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_6dcb656b07441c49a22eecc6c213abd9/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_6534f471badd14bba23200d8ac6d2daf/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1398,10 +1398,10 @@ Checking for HAVE_CMATH_ISNAN
           return std::isnan(1.0f);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_1ca2db298e86a57f1ffb69e124008edc/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_5a33d1e1e699d6de377081e4fd7698ea/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_1ca2db298e86a57f1ffb69e124008edc/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_5a33d1e1e699d6de377081e4fd7698ea/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1418,10 +1418,10 @@ Checking for NEED_CMATH_ISFINITE_STD_NAMESPACE
           return isfinite((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_777bf3914ff690b0d44fe6309c89fbcc/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_8e2de1a9d777eb94a3c1f73b6638854f/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_777bf3914ff690b0d44fe6309c89fbcc/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_8e2de1a9d777eb94a3c1f73b6638854f/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1438,10 +1438,10 @@ Checking for NEED_CMATH_ISINF_STD_NAMESPACE
           return isinf((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_ff00bc57a9b055cffcb9b20a2438fd30/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_cdce159624eebb335af596adbf335dae/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ff00bc57a9b055cffcb9b20a2438fd30/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_cdce159624eebb335af596adbf335dae/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1458,10 +1458,10 @@ Checking for NEED_CMATH_ISNAN_STD_NAMESPACE
           return isnan((double)1);
         }
 <==
-[1/2] Compiling [32mbuild/.conf_check_b7a266586461600fadaa67f15d570eae/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_199d8322201ea6a9e4aec1b7c8a147f4/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_b7a266586461600fadaa67f15d570eae/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_199d8322201ea6a9e4aec1b7c8a147f4/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1476,10 +1476,10 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_40ab14f74f4a2624888ce4ae46785b63/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_54329ff3a75078204bd5b36f4137f9a9/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_40ab14f74f4a2624888ce4ae46785b63/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_54329ff3a75078204bd5b36f4137f9a9/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
@@ -1494,17 +1494,17 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_29be287b4c4996db11a5180238b5d923/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_cd382b2024e096cf6792b7e2413c7697/test.cpp[0m
 
 ['clang++', '-std=gnu++11', '-fdata-sections', '-ffunction-sections', '-fno-exceptions', '-fsigned-char', '-Wall', '-Wextra', '-Wformat', '-Wshadow', '-Wpointer-arith', '-Wcast-align', '-Wundef', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-reorder', '-Wno-redundant-decls', '-Wno-unknown-pragmas', '-Werror=format-security', '-Werror=array-bounds', '-Werror=uninitialized', '-Werror=init-self', '-Werror=switch', '-Werror=sign-compare', '-Wfatal-errors', '-Wno-trigraphs', '-fcolor-diagnostics', '-Wno-gnu-designator', '-Wno-inconsistent-missing-override', '-Wno-mismatched-tags', '-Wno-gnu-variable-sized-type-not-at-end', '-Wno-c++11-narrowing', '-O3', '-fno-slp-vectorize', '-O0', '-g', '--target=arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf', '-I/media/rpi/usr/include/arm-linux-gnueabihf/c++/6', '-MMD', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', '-DCONFIG_HAL_BOARD=HAL_BOARD_SITL', '-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE', '-DWAF_BUILD=1', '-D__STDC_FORMAT_MACROS=1', '-DHAVE_CMATH_ISFINITE=1', '-DHAVE_CMATH_ISINF=1', '-DHAVE_CMATH_ISNAN=1', '-DNEED_CMATH_ISFINITE_STD_NAMESPACE=1', '-DNEED_CMATH_ISINF_STD_NAMESPACE=1', '-DNEED_CMATH_ISNAN_STD_NAMESPACE=1', '-DHAVE_ENDIAN_H=1', '../../test.cpp', '-c', '-otest.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_29be287b4c4996db11a5180238b5d923/testbuild/sitl/testprog[0m
+[2/2] Linking [33mbuild/.conf_check_cd382b2024e096cf6792b7e2413c7697/testbuild/sitl/testprog[0m
 
 ['clang++', '-Wl,--gc-sections', '-pthread', '--target=arm-linux-gnueabihf', '--gcc-toolchain=/usr', '--sysroot=/', '-B/usr/bin', 'test.cpp.1.o', '-otestprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lm']
 yes
 ----------------------------------------------
 Checking for program 'python'
 /usr/bin/python
-find program=['python'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='PYTHON' -> ['/usr/bin/python']
+find program=['python'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='PYTHON' -> ['/usr/bin/python']
 ['/usr/bin/python', '-c', 'import imp;print(imp.get_tag())']
 err: Traceback (most recent call last):
   File "<string>", line 1, in <module>
@@ -1533,7 +1533,7 @@ Checking for python version >= 2.7.0
 ----------------------------------------------
 Checking for program 'python'
 /usr/bin/python
-find program=['python'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='PYTHON' -> ['/usr/bin/python']
+find program=['python'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='PYTHON' -> ['/usr/bin/python']
 ['/usr/bin/python', '-c', 'import imp;print(imp.get_tag())']
 err: Traceback (most recent call last):
   File "<string>", line 1, in <module>
@@ -1558,11 +1558,11 @@ no
 ----------------------------------------------
 Checking for program 'git'
 /usr/bin/git
-find program=['git'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='GIT' -> ['/usr/bin/git']
+find program=['git'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='GIT' -> ['/usr/bin/git']
 -----------------------------------------------
 Checking for program 'arm-linux-gnueabihf-size'
 /usr/bin/arm-linux-gnueabihf-size
-find program=['arm-linux-gnueabihf-size'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='SIZE' -> ['/usr/bin/arm-linux-gnueabihf-size']
+find program=['arm-linux-gnueabihf-size'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='SIZE' -> ['/usr/bin/arm-linux-gnueabihf-size']
 -----------------------------------------------
 Benchmarks
 disabled
@@ -1572,4 +1572,4 @@ disabled
 -----------------------------------------------
 Checking for program 'rsync'
 /usr/bin/rsync
-find program=['rsync'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattestllvm/build/bin'] var='RSYNC' -> ['/usr/bin/rsync']
+find program=['rsync'] paths=['/home/ari-new-ae/bin', '/home/ari-new-ae/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin', '/home/ari-new-ae/conattest/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/gcc-linaro-6.2.1-2016.11-x86_64_arm-linux-gnueabihf/bin', '/home/ari-new-ae/conattest/conattestllvm/build/bin'] var='RSYNC' -> ['/usr/bin/rsync']

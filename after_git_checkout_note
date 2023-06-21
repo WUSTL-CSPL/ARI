@@ -1,0 +1,15 @@
+compilation with -D will not overwrite previously compiled binary, and will lead to Vscode IDE not able to add break point. 
+
+after initial clone:
+1. git submodule update --init --recursive
+2. Tools/environment_install/install-prereqs-ubuntu.sh -y
+3. . ~/.profile
+*. rm -rf build/
+4. ./waf configure --board sitl
+5. ./waf copter --debug
+6. cd ArduCopter
+7. ../Tool/autotest/sim_vehicle.py --console --map -D
+8. after commenting, need recompile to fix src line number of debug binary (a.k.a step 5)
+
+after launch arducopter
+fire: "mavproxy.py" "--master" "tcp:127.0.0.1:5760" "--sitl" "127.0.0.1:5501" "--out" "127.0.0.1:14550" "--out" "127.0.0.1:14551" "--map" "--console"

@@ -1,0 +1,4 @@
+cd /home/osboxes/Desktop/conattest/llvm-pass/insertHook
+sh insert_hook_commands.txt
+cd /home/osboxes/Desktop/conattest/llvm-pass/insertHook2
+sh insert_hook_commands.txt

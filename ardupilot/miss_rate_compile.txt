@@ -1,0 +1,4 @@
+source ./source_me_sitl_bc_step_zero_hw.txt
+source ./llvm-link_cmd_hw.txt
+llc -filetype=obj ./llvm-link.bc -o ./llvm-link_cond_br.o
+source ./single_bc_final_link_hw.txt  && cd ./bin/ && scp ./arducopter pi@192.168.0.198:~ && cd ../../../

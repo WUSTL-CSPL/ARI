@@ -1,0 +1,275 @@
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -lgcc -lc --entry main -o syringe--baseline_after_compt.elf
+
+__trampoline_fw_blx_sercure:
+	saving r0, r1, r2, r3, r4 on stack
+	ict_checking
+	.fw_blx_return
+	cmp r0,#0
+	bne __error
+	restoring r0, r1, r2, r3, r4 from stack
+	bx r8
+
+__trampoline_fw_blx:
+	sub sp, sp, #8
+	str r0, [sp, #0]
+	str lr, [sp, #4]
+	mov r0, r8
+	blx ict_checking
+	CMP r0, #0
+	bne __error
+	ldr r0, [sp, #0]
+	blx r8
+	ldr lr, [sp, #4]
+	add sp, sp, #8
+	bx 	lr
+
+
+__trampoline_bkwd_bx:
+	sub sp, sp, #8
+	str r0, [sp, #0]
+	str lr, [sp, #4]
+	mov r0, r8
+	blx ict_checking
+	cmp r0, #0
+	bne __error
+	ldr r0, [sp, #0]
+	ldr lr, [sp, #4]
+	add sp, sp, #8
+	bx 	r8
+
+__trampoline_bkwd_pop:
+	pop {r8}
+	sub sp, sp, #8
+	str r0, [sp, #0]
+	str lr, [sp, #4]
+	mov r0, r8
+	ldr r0, .cpt_tb+4
+	blx ict_checking
+	cmp r0, #0
+	bne __error
+	ldr r0, [sp, #0]
+	ldr lr, [sp, #4]
+	add sp, sp, #8
+	bx 	r8	
+
+
+
+0x7efffc8c:     0x76fffc48      0x76fdf1c8      0x000001d7      0x76fff000
+0x7efffc9c:     0x76fdeeb0      0x00000000      0x00000000      0x00011650
+0x7efffcac:     0x00000000      0x00000000      0x76fff000      0x00000000
+0x7efffcbc:     0x76fffc48      0x00000001      0x7efffde0      0x00000000
+0x7efffccc:     0x7efffe0b      0x7efffe1e      0x7efffe29      0x7efffe38
+
+0x7efffc98:     0x76fff000      0x76fdeeb0      0x00000000      0x76fdf1c8
+0x7efffca8:     0x00011650      0x00000000      0x00000000      0x76fff000
+0x7efffcb8:     0x00000000      0x76fffc48      0x00000001      0x7efffde0
+0x7efffcc8:     0x00000000      0x7efffe0b      0x7efffe1e      0x7efffe29
+0x7efffcd8:     0x7efffe38      0x7efffe49      0x7efffe5b      0x7efffe6b
+
+
+0x7efffc98:     0x76fff000      0x76fdeeb0      0x00000000      0x00000000
+0x7efffca8:     0x00011650      0x00000000      0x00000000      0x76fff000
+0x7efffcb8:     0x00000000      0x76fffc48
+
+0x7efffc98:     0x76fff000      0x76fdeeb0      0x00000000      0x76fdf1c8
+0x7efffca8:     0x00011650      0x00000000      0x00000000      0x76fff000
+0x7efffcb8:     0x00000000      0x76fffc48
+
+
+   11024:	e58d0000 	str	r0, [sp]
+   11028:	ea000003 	b	1103c <main+0x10c>
+   1102c:	e59d0000 	ldr	r0, [sp]
+   11030:	e280000a 	add	r0, r0, #10
+   11034:	e58d0000 	str	r0, [sp]
+   11038:	ebfffd42 	bl	10548 <loop>
+   1103c:	e59d0000 	ldr	r0, [sp]
+   11040:	e350003d 	cmp	r0, #61	; 0x3d
+   11044:	dafffff8 	ble	1102c <main+0xfc>
+   11048:	e59f0024 	ldr	r0, [pc, #36]	; 110
+
+(gdb) x /10bx $sp
+0x7efffca0:     0x01    0x00    0x00    0x00    0x14    0x03    0x01    0x00
+0x7efffca8:     0x60    0x0d
+
+0x7efffca0:     0x01    0x00    0x00    0x00    0x14    0x03    0x01    0x00
+0x7efffca8:     0x60    0x0d
+
+
+00010d88 <main>:
+   10d88:	e24dd00c 	sub	sp, sp, #12
+   10d8c:	e3a02000 	mov	r2, #0
+   10d90:	e98d0005 	stmib	sp, {r0, r2}
+   10d94:	e58d1000 	str	r1, [sp]
+   10d98:	e3a00000 	mov	r0, #0
+   10d9c:	e28dd00c 	add	sp, sp, #12
+   10da0:	e12fff1e 	bx	lr
+
+00010c88 <main>:
+   10c88:	e24dd00c 	sub	sp, sp, #12
+   10c8c:	e3a02000 	mov	r2, #0
+   10c90:	e98d0005 	stmib	sp, {r0, r2}
+   10c94:	e58d1000 	str	r1, [sp]
+   10c98:	e3a00000 	mov	r0, #0
+   10c9c:	e28dd00c 	add	sp, sp, #12
+   10ca0:	e12fff1e 	bx	lr
+
+
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s /home/osboxes/Desktop/conattest/trampoline_lib/trampoline_fw.o --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -lgcc -lc --entry main -o syringe--baseline_after_compt.elf  
+
+single_bc_final_link.txt
+
+cd build/sitl
+/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/bin/ld -T ../../arm_linker_script.txt --sysroot=/ -z relro -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /lib/ld-linux-armhf.so.3 -o bin/arducopter /home/osboxes/Desktop/OAT-Project/oat-trampoline-lib/trampoline.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/crtbegin.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../lib -L/home/osboxes/Desktop/llvm/build/bin/../lib -L//lib/../lib -L//usr/lib/../lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../.. -L/home/osboxes/Desktop/llvm/build/bin/../lib -L//lib -L//usr/lib /home/osboxes/Desktop/conattest/ardupilot/llvm-link_cond_br.o -lm -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/crtend.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crtn.o /home/osboxes/Desktop/raspbian-tee/optee_client/out/export/lib/libteec.a
+
+
+cd build/sitl
+/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/bin/ld -T /home/osboxes/Desktop/conattest/ardupilot/arm_link_script_syringe_intermidea.txt --sysroot=/ -z relro -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /lib/ld-linux-armhf.so.3 -o bin/arducopter /home/osboxes/Desktop/conattest/trampoline_lib/ict_checking.o /home/osboxes/Desktop/conattest/trampoline_lib/trampoline_fw.o /home/osboxes/Desktop/OAT-Project/oat-trampoline-lib/trampoline.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/crtbegin.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../lib -L/home/osboxes/Desktop/llvm/build/bin/../lib -L//lib/../lib -L//usr/lib/../lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../.. -L/home/osboxes/Desktop/llvm/build/bin/../lib -L//lib -L//usr/lib /home/osboxes/Desktop/conattest/ardupilot/llvm-link_cond_br.o -lm -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/crtend.o /usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0/../../../../arm-linux-gnueabihf/lib/../lib/crtn.o /home/osboxes/Desktop/raspbian-tee/optee_client/out/export/lib/libteec.a
+
+
+
+
+
+
+
+
+@compartment transfer BL
+__tsf_direct_jmp_link_checking:
+	@bx r8
+	@saving context
+	sub sp, sp, #20
+	str r0, [sp]
+	str r1, [sp, #4]
+	str r2, [sp, #8]
+	str r3, [sp, #12]
+	mrs r0, apsr 
+	str r0, [sp, #16]
+
+	@checking compartment transfering
+	
+	ldr r0, .curr_cpt_id
+	mov r1, #8
+	mul r1, r0, r1		@get first entity offset of current compartment
+	ldr r2, =.cpt_direct_transfer_tb
+	add r1, r1, r2 		@get address of current compartment metadata r1
+	
+	ldr r0, .total_cpt_cnt
+	mov r2, #8
+	mul r0, r0, r2		
+	ldr r2, =.cpt_direct_transfer_tb
+	add r0, r2, r0 		@get first entity address r0
+
+	ldr r2, [r1]		@compartment offset
+	add r2, r2, r0      @current compartment first entity address
+
+	ldr r1, [r1, #4]    @current compartment total entity account
+
+	mov r3, #0 			@loop index
+direct_link_cpt_ck_loop:
+	
+	cmp r3, r1
+	bge direct_link_cpt_ck_fail
+
+	mov r0, #8
+	mul r0, r3, r0
+	add r0, r0, r2
+	ldr r0, [r0] 		@load possible target address
+
+	cmp r8, r0
+	beq direct_link_cpt_ck_pass
+	
+	add r3, r3, #1
+	b direct_link_cpt_ck_loop
+
+direct_link_cpt_ck_fail:
+	@modifying next compartment id
+	@restoring context
+	b direct_link_cpt_ck_pass @this is for prototype
+	b __error
+
+direct_link_cpt_ck_pass:
+	mov r0, #8 			 @modifying current compartment id 
+	sub r3, r3, #1
+	mul r0, r3, r0
+	add r0, r0, r2
+	ldr r0, [r0, #4]
+	ldr r1, =.curr_cpt_id
+	str r0, [r1]
+	
+	@add next cpt id on to cpt stack
+	ldr r0, =.cpt_stack
+	ldr r1, .curr_cpt_stack_pointer_offset
+	add r0, r0, r1
+	@modify cpt stack pointer offset
+	add r1, #8
+	str r1, .curr_cpt_stack_pointer_offset @update current stack pointer offset
+
+	ldr r1, .curr_cpt_id
+	str r1, [r0]
+	@add return address on to cpt stack
+	add r0, #4
+	str lr, [r0]
+
+	ldr r0, [sp, #16]
+	msr apsr, r0
+	ldr r0, [sp]
+	ldr r1, [sp, #4]
+	ldr r2, [sp, #8]
+	ldr r3, [sp, #12]
+	add sp, sp, #20
+	bx r8
+
+	add	r6, r4, r10
+	.loc	196 469 5 is_stmt 1     @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:469:5
+	mvn	r0, #0
+	movw	r8, #447
+	push	{r8}
+	add	sp, sp, #4
+	add	r8, r4, #12, #10
+	sub	sp, sp, #4
+	push	{r7}
+	push	{lr}
+	bl	__storing_checking
+	pop	{lr}
+	add	sp, sp, #8
+	str	r0, [r4, #1316]
+
+
+		add	r6, r4, r10
+	.loc	196 469 5 is_stmt 1     @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:469:5
+	mvn	r0, #0
+	movw	r8, #447
+	push	{r8}
+	add	sp, sp, #4
+	add	r8, r4, #12, #10
+	sub	sp, sp, #4
+	push	{r7}
+	push	{lr}
+	bl	__storing_checking
+	pop	{lr}
+	add	sp, sp, #8
+	str	r0, [r4, #1316]
+.LBB721_39:                             @ =>This Inner Loop Header: Depth=1
+	.loc	196 467 20 discriminator 39 @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:467:20
+	add	r5, r6, r7
+	mov	r0, r5
+	bl	_ZN13LowPassFilterI7Vector3IfEEC1Ev
+	add	r7, r7, #20
+	cmp	r7, #40
+	bne	.LBB721_39
+
+
+		orr	r10, r10, #1024
+	mov	r7, #0
+	add	r6, r4, r10
+	.loc	196 469 5 is_stmt 1     @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:469:5
+	mvn	r0, #0
+	.loc	196 468 5               @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:468:5
+	strb	r7, [r4, #1292]
+	.loc	196 469 5               @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:469:5
+	str	r0, [r4, #1316]
+.LBB721_39:                             @ =>This Inner Loop Header: Depth=1
+	.loc	196 467 20 discriminator 39 @ ../../libraries/AP_InertialSensor/AP_InertialSensor.cpp:467:20
+	add	r5, r6, r7
+	mov	r0, r5
+	bl	_ZN13LowPassFilterI7Vector3IfEEC1Ev
+	add	r7, r7, #20

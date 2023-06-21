@@ -1,0 +1,7 @@
+cd /home/osboxes/Desktop/conattest/ardupilot
+source ./source_me_sitl_bc_step_zero.txt
+source ./llvm-link_cmd.txt
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxAnaysis --hexbox-analysis-results=./analysis_result.json ./llvm-link.bc > after_hexbox_info_clct.bc
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxApplication --hexbox-policy=./compartments_result.json ./llvm-link.bc > ./after_compartment_llvm_link.bc 
+llc -filetype=obj ./after_compartment_llvm_link.bc -o ./llvm-link_cond_br.o
+source ./single_bc_final_link.txt  && cd ./bin/ && scp ./arducopter pi@10.228.106.170:~ && cd ../../../

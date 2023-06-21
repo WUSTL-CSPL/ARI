@@ -1,0 +1,4 @@
+_ZN6Copter15failsafe_enableEv
+_ZN6Copter16failsafe_disableEv
+_GLOBAL__sub_I_failsafe.cpp
+_ZN6Copter14failsafe_checkEv
