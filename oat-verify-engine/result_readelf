@@ -1,0 +1,73 @@
+There are 65 section headers, starting at offset 0x7bff38:
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        000101f4 0001f4 000019 00   A  0   0  1
+  [ 2] .note.ABI-tag     NOTE            00010210 000210 000020 00   A  0   0  4
+  [ 3] .gnu.hash         GNU_HASH        00010230 000230 000594 04   A  4   0  4
+  [ 4] .dynsym           DYNSYM          000107c4 0007c4 000c40 10   A  5   1  4
+  [ 5] .dynstr           STRTAB          00011404 001404 0007aa 00   A  0   0  1
+  [ 6] .gnu.version      VERSYM          00011bae 001bae 000188 02   A  4   0  2
+  [ 7] .gnu.version_r    VERNEED         00011d38 001d38 000100 00   A  5   6  4
+  [ 8] .rel.dyn          REL             00011e38 001e38 000040 08   A  4   0  4
+  [ 9] .rel.plt          REL             00011e78 001e78 000598 08  AI  4  45  4
+  [10] .init             PROGBITS        00012410 002410 000018 00  AX  0   0  8
+  [11] .plt              PROGBITS        00012428 002428 00087c 04  AX  0   0  4
+  [12] .DATA_REGION_0__d PROGBITS        00012ca4 002ca4 0003f0 00   A  0   0  4
+  [13] .CODE_REGION_1_   PROGBITS        00020000 010000 001920 00  AX  0   0  8
+  [14] .DATA_REGION_1__s PROGBITS        00021920 011920 000004 00 WAX  0   0  1
+  [15] .CODE_REGION_2_   PROGBITS        00040000 020000 000ba8 00  AX  0   0  8
+  [16] .DATA_REGION_2__s PROGBITS        00040ba8 020ba8 000004 00 WAX  0   0  1
+  [17] .CODE_REGION_3_   PROGBITS        00080000 030000 000520 00  AX  0   0  8
+  [18] .DATA_REGION_3__s PROGBITS        00080520 030520 000004 00 WAX  0   0  1
+  [19] .CODE_REGION_4_   PROGBITS        00400000 040000 1af998 00  AX  0   0  8
+  [20] .DATA_REGION_4__s PROGBITS        005af998 1ef998 000004 00 WAX  0   0  1
+  [21] .DATA_REGION_4__d PROGBITS        005af99c 1ef99c 013814 00   A  0   0 16
+  [22] .DATA_REGION_4__b PROGBITS        005c31b0 2031b0 00b848 00  WA  0   0  8
+  [23] .CODE_REGION_5_   PROGBITS        00800000 210000 0037b0 00  AX  0   0  8
+  [24] .DATA_REGION_5__s PROGBITS        008037b0 2137b0 000004 00 WAX  0   0  1
+  [25] .DATA_REGION_5__d PROGBITS        008037b4 2137b4 000010 00   A  0   0  4
+  [26] .DATA_REGION_5__b PROGBITS        008037c4 268e68 000000 00   W  0   0  1
+  [27] .CODE_REGION_6_   PROGBITS        01000000 220000 002028 00  AX  0   0  8
+  [28] .DATA_REGION_6__s PROGBITS        01002028 222028 000004 00 WAX  0   0  1
+  [29] .CODE_REGION_7_   PROGBITS        02000000 230000 001118 00  AX  0   0  8
+  [30] .DATA_REGION_7__s PROGBITS        02001118 231118 000004 00 WAX  0   0  1
+  [31] .CODE_REGION_8_   PROGBITS        04000000 240000 004448 00  AX  0   0  8
+  [32] .DATA_REGION_8__s PROGBITS        04004448 244448 000004 00 WAX  0   0  1
+  [33] .text             PROGBITS        04004450 244450 0055c8 00  AX  0   0  8
+  [34] .trampoline       PROGBITS        04009a18 249a18 000100 00  AX  0   0  8
+  [35] .fini             PROGBITS        04009b18 249b18 000008 00  AX  0   0  4
+  [36] .rodata           PROGBITS        04009b20 249b20 00db8f 00   A  0   0 16
+  [37] .AMI_SFI_Metadata PROGBITS        040176af 2576af 0000c8 00   A  0   0  1
+  [38] .ARM.exidx        ARM_EXIDX       04017778 257778 000008 00  AL 33   0  4
+  [39] .eh_frame         PROGBITS        04017780 257780 000004 00   A  0   0  4
+  [40] .init_array       INIT_ARRAY      040278a4 2678a4 000630 00  WA  0   0  4
+  [41] .fini_array       FINI_ARRAY      04027ed4 267ed4 000004 00  WA  0   0  4
+  [42] .jcr              PROGBITS        04027ed8 267ed8 000004 00  WA  0   0  4
+  [43] .data.rel.ro      PROGBITS        04027edc 267edc 000014 00  WA  0   0  4
+  [44] .dynamic          DYNAMIC         04027ef0 267ef0 000110 08  WA  5   0  4
+  [45] .got              PROGBITS        04028000 268000 0002f0 04  WA  0   0  4
+  [46] .data             PROGBITS        040282f0 2682f0 00001c 00  WA  0   0  4
+  [47] .trampoline_fw    PROGBITS        04028310 268310 000b58 00 WAX  0   0  8
+  [48] .bss              NOBITS          04028e68 268e68 9896f10 00  WA  0   0  8
+  [49] .comment          PROGBITS        00000000 268e68 0000a4 01  MS  0   0  1
+  [50] .ARM.attributes   ARM_ATTRIBUTES  00000000 268f0c 000039 00      0   0  1
+  [51] .debug_aranges    PROGBITS        00000000 268f48 000080 00      0   0  8
+  [52] .debug_pubnames   PROGBITS        00000000 268fc8 055ca4 00      0   0  1
+  [53] .debug_info       PROGBITS        00000000 2bec6c 182970 00      0   0  1
+  [54] .debug_abbrev     PROGBITS        00000000 4415dc 001868 00      0   0  1
+  [55] .debug_line       PROGBITS        00000000 442e44 11f93b 00      0   0  1
+  [56] .debug_frame      PROGBITS        00000000 562780 041800 00      0   0  4
+  [57] .debug_str        PROGBITS        00000000 5a3f80 0a3de3 01  MS  0   0  1
+  [58] .debug_loc        PROGBITS        00000000 647d63 000d7c 00      0   0  1
+  [59] .debug_macinfo    PROGBITS        00000000 648adf 000001 00      0   0  1
+  [60] .debug_pubtypes   PROGBITS        00000000 648ae0 00811b 00      0   0  1
+  [61] .debug_ranges     PROGBITS        00000000 650bfb 00e9c0 00      0   0  1
+  [62] .shstrtab         STRTAB          00000000 7bfbdb 00035d 00      0   0  1
+  [63] .symtab           SYMTAB          00000000 65f5bc 0d7750 10     64 46326  4
+  [64] .strtab           STRTAB          00000000 736d0c 088ecf 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)

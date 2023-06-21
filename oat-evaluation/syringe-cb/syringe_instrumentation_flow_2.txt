@@ -1,0 +1,11 @@
+make llc-comp
+
+cd ~/Desktop/conattest/oat-evaluation/syringe-cb && make trampoline
+
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s /home/osboxes/Desktop/OAT-Project/oat-trampoline-lib/trampoline.o /home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/ta_trampoline.o /home/osboxes/Desktop/conattest/trampoline_lib/shared_data_sections.o  --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -L/home/osboxes/Desktop/raspbian-tee/optee_client/out/export/lib -lteec -lgcc -lc -lpthread --entry main -o syringe--baseline_after_compt.elf  
+
+make llc-comp-asm
+
+/home/osboxes/devel/optee/toolchains/aarch32/bin/arm-linux-gnueabihf-objdump -D ./syringe--baseline_after_compt.elf > ./objdump_syringe.S
+
+scp ./syringe--baseline_after_compt.elf pi@192.168.0.198:~

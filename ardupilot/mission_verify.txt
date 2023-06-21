@@ -1,0 +1,2 @@
+arm-linux-gnueabihf-objdump -d ../ardupilot/build/sitl/bin/arducopter  > ../ardupilot/arducopter.S
+./verify_engine -c ./replay.cfg  -l -o ./veri_output.txt  -t ../ardupilot/ARI_branch.txt -i ../ardupilot/ARI_ind_jmp.txt  -ee ../ardupilot/ARI_tsf.txt  -bf ../ardupilot/build/sitl/bin/arducopter -cr ../ardupilot/crit_cpt_num.txt -rt ../ardupilot/ARI_ret_hash.txt ../ardupilot/build/sitl/bin/arducopter

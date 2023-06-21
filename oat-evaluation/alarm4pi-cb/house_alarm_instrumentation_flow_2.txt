@@ -1,0 +1,3 @@
+make llc-comp
+
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s  /home/osboxes/Desktop/OAT-Project/oat-trampoline-lib/trampoline.o /home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/ta_trampoline.o /home/osboxes/Desktop/conattest/trampoline_lib/shared_data_sections.o --sysroot=/ --entry main -o alarm--baseline_after_compt.elf  -L/usr/arm-linux-gnueabihf/lib -L/home/osboxes/Desktop/raspbian-tee/optee_client/out/export/lib -lteec -lc -lm -lresolv -lpthread -lrt 

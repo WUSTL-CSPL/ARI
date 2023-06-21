@@ -1,0 +1,292 @@
+{
+    "Compartments": {
+        ".CODE_REGION_1_": {
+            "Data": [
+                ".DATA_REGION_1_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_2_": {
+            "Data": [
+                ".DATA_REGION_2_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_3_": {
+            "Data": [
+                ".DATA_REGION_3_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_4_": {
+            "Data": [],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_5_": {
+            "Data": [
+                ".DATA_REGION_5_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        }
+    },
+    "MPU_CONFIG": {
+        ".CODE_REGION_1_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_2_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_3_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_4_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_5_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "__hexbox_default": {
+            "Addrs": null,
+            "Attrs": null
+        }
+    },
+    "NUM_MPU_REGIONS": 8,
+    "Regions": {
+        ".CODE_REGION_1_": {
+            "Align": 1,
+            "Objects": [
+                "lcd_setCursor",
+                "lcd_begin",
+                "lcd_clear",
+                "lcd_print"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_2_": {
+            "Align": 1,
+            "Objects": [
+                "bolus",
+                "processSerial",
+                "updateScreen",
+                "readSerial",
+                "get_key",
+                "main",
+                "doKeyAction",
+                "checkTriggers",
+                "setup",
+                "readKey",
+                "loop"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_3_": {
+            "Align": 1,
+            "Objects": [
+                "Serial_begin",
+                "digitalWrite",
+                "analogRead",
+                "Serial_available",
+                "millis",
+                "usecs",
+                "digitalRead",
+                "toUInt",
+                "Serial_read",
+                "Serial_write",
+                "pinMode",
+                "delayMicroseconds"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_4_": {
+            "Align": 1,
+            "Objects": [
+                "printf",
+                "getchar",
+                "sprintf",
+                "usleep",
+                "__isoc99_scanf",
+                "atoi",
+                "gettimeofday"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_5_": {
+            "Align": 1,
+            "Objects": [
+                "led_off",
+                "led_on"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".DATA_REGION_1_": {
+            "Align": 1,
+            "Objects": [
+                "__func__.lcd_clear",
+                "__func__.lcd_print",
+                "__func__.lcd_setCursor",
+                "__func__.lcd_begin"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_2_": {
+            "Align": 1,
+            "Objects": [
+                "triggerPin",
+                "keyDebounce",
+                "bigTriggerPin",
+                "motorStepPin",
+                "mLBolusStep",
+                "motorDirPin",
+                "mLBolus",
+                "mLUsed",
+                "keyRepeatDelay",
+                "lcd",
+                "NUM_KEYS",
+                "mLBolusStepIdx",
+                "adc_key_val",
+                "serialStrReady",
+                "prevBigTrigger",
+                "prevTrigger",
+                "ustepsPerML",
+                "key",
+                "serialStr",
+                "mLBigBolus",
+                "serialStrLen",
+                "mLBolusSteps",
+                "prevKey",
+                "lastKeyRepeatAt",
+                "adc_key_in",
+                "uiState"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_3_": {
+            "Align": 1,
+            "Objects": [
+                "__func__.pinMode",
+                "__func__.digitalRead",
+                "__func__.Serial_write",
+                "__func__.Serial_begin",
+                "__func__.Serial_available"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_5_": {
+            "Align": 1,
+            "Objects": [
+                "__func__.led_off",
+                "__func__.led_on"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        }
+    }
+}

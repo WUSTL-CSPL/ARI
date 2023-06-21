@@ -1,0 +1,4223 @@
+{
+	".Peripheral_0" : 
+	{
+		"Attr" : 
+		{
+			"Addr" : 1,
+			"ArgNum" : 0,
+			"DataSize" : 4,
+			"DataType" : "void (i32)*",
+			"IsArg" : false,
+			"IsParam" : false,
+			"LLVM::Value" : "void (i32)* inttoptr (i32 1 to void (i32)*)",
+			"Read" : false,
+			"Type" : "Peripheral",
+			"Write" : false
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Type" : "Peripheral"
+			},
+			"signal" : 
+			{
+				"Type" : "Peripheral"
+			}
+		}
+	},
+	"Capture_exec_args" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Child_process_id" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"exit_deamon_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"main" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Console_messages" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "log_msgs.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"msg_printf" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Event_file_handle" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "log_msgs.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"close_log_files" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"open_log_files" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Exit_daemon_loop" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"exit_deamon_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"GPIO_direction" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"configure_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strlen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"write" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"GPIO_direction.s_directions_str" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"GPIO_export" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 8,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"usleep" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"write" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"GPIO_read" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 (i32, i32*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"atoi" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 6,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"read" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"GPIO_unexport" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 10,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"unexport_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"write" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"GPIO_write" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"configure_gpios" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strlen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"write" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"GPIO_write.s_values_str" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Log_file_handle" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "log_msgs.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"close_log_files" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"configure_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"configure_timer" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"exit_deamon_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 9,
+				"Type" : "Data"
+			},
+			"init_polling" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"main" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"open_log_files" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 9,
+				"Type" : "Data"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 10,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 9,
+				"Type" : "Data"
+			},
+			"set_signal_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"timer_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"unexport_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"wait_polling_end" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"wait_processes" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Msg_info_str" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"send_info_notif" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Polling_thread_id" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"wait_polling_end" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Server_ip" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Server_name" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Server_path" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Server_port" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Token_id" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"User_id" : 
+	{
+		"Attr" : 
+		{
+			"Filename" : "pushover.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"send_notification" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Web_server_exec_args" : 
+	{
+		"Attr" : 
+		{
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__errno_location" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32* ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_export" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_read" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"configure_timer" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"daemonize" : 
+			{
+				"Count" : 6,
+				"Type" : "Caller"
+			},
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 8,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 10,
+				"Type" : "Caller"
+			},
+			"set_signal_handler" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"wait_processes" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__h_errno_location" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32* ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__isoc99_fscanf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 8,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__isoc99_sscanf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__res_ninit" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__res_state*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__res_nquery" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__res_state*, i8*, i32, i32, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"alarm" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"wait_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"atoi" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"chdir" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"close" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_export" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"close_log_file" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "void (%struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"close_log_files" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"fclose" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_localtime_str" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"close_log_files" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"close_log_file" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"configure_gpios" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"configure_timer" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "i32 (float)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"setitimer" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"connect" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, %struct.sockaddr*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"daemonize" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 6,
+				"Type" : "Callee"
+			},
+			"chdir" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"dup2" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"exit" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"fork" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"fprintf" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"perror" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"setsid" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"signal" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"umask" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"dirname" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"dup2" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"execvp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"run_background_command" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"exit" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"exit_deamon_handler" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"kill_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"export_gpios" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_export" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 10,
+				"Type" : "Callee"
+			},
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"fclose" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"close_log_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fdopen" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%struct._IO_FILE* (i32, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"feof" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fgets" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i8*, i32, %struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fileno" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"flock" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fopen" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%struct._IO_FILE* (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fork" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fprintf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"close_log_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"daemonize" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"open_msg_file" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 6,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fread" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, i32, %struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"free" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"freeaddrinfo" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.addrinfo*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fseek" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*, i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ftell" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"fwrite" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, i32, %struct._IO_FILE*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"gai_strerror" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"get_current_exec_path" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "i32 (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"dirname" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 6,
+				"Type" : "Callee"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"readlink" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strcat" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strcpy" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strlen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"get_localtime_str" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "void (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"close_log_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"localtime" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"open_msg_file" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"strftime" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"time" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"get_public_ip" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "public_ip.c",
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"inet_ntoa" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"strcpy" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"getaddrinfo" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, %struct.addrinfo*, %struct.addrinfo**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"gettimeofday" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.timeval*, %struct.timeval*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"usecs" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"herror_msg" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "public_ip.c",
+			"LLVM_Type" : "i8* (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"hostname_to_ip" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "public_ip.c",
+			"LLVM_Type" : "i32 (i8*, %struct.in_addr*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"freeaddrinfo" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"gai_strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"getaddrinfo" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 8,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.memset.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"hostname_to_ip_at_dns" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "public_ip.c",
+			"LLVM_Type" : "i32 (i8*, i8*, %struct.in_addr*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"__h_errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"__res_ninit" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"__res_nquery" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_public_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"herror_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"inet_ntoa" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 19,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"llvm.memset.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 9,
+				"Type" : "Callee"
+			},
+			"ns_initparse" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"ns_msg_getflag" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"ns_parserr" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"ns_sprintrr" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"resp_code_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"htons" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i16 (i16)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"inet_ntoa" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* ([1 x i32])*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_public_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"init_polling" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"LLVM_Type" : "i32 (i32*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"configure_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"llvm.var.annotation" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"usecs" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"kill" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"kill_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"kill_processes" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "void (i32*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"exit_deamon_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"kill" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"llvm.memcpy.p0i8.p0i8.i32" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*, i8*, i32, i32, i1)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"llvm.memset.p0i8.i32" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*, i8, i32, i32, i1)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"set_signal_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"llvm.va_end" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"llvm.va_start" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"llvm.var.annotation" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*, i8*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"localtime" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%struct.tm* (i32*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_localtime_str" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"main" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"LLVM_Type" : "i32 (i32, i8**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"close_log_files" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"configure_timer" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"open_log_files" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"set_signal_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setenv" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"sleep" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"syslog" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"wait_polling_end" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"wait_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"malloc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"msg_printf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "i32 (%struct._IO_FILE*, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"configure_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"configure_timer" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"exit_deamon_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"fprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_localtime_str" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 9,
+				"Type" : "Caller"
+			},
+			"init_polling" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"llvm.va_end" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.va_start" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 9,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 6,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 9,
+				"Type" : "Caller"
+			},
+			"set_signal_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"timer_handler" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"unexport_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"vfprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"vprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"wait_polling_end" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"wait_processes" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ns_initparse" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, %struct.__ns_msg*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ns_msg_getflag" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ([12 x i32], i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ns_parserr" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__ns_msg*, i32, i32, %struct.__ns_rr*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ns_sprintrr" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__ns_msg*, %struct.__ns_rr*, i8*, i8*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"open" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_export" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"run_background_command" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"open_log_files" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"open_msg_file" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"open_msg_file" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "log_msgs.c",
+			"LLVM_Type" : "%struct._IO_FILE* (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"fclose" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fileno" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"flock" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fopen" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"fprintf" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"fread" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"free" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fseek" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"ftell" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fwrite" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_localtime_str" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"malloc" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"open_log_files" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"setbuf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"perror" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"polling_thread" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"LLVM_Type" : "i8* (i32*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"llvm.var.annotation" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"send_info_notif" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"printf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"pthread_join" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i8**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"wait_polling_end" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"pushover_init" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "pushover.c",
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"__isoc99_fscanf" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"__isoc99_sscanf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fclose" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"feof" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fopen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"hostname_to_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"inet_ntoa" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 10,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 9,
+				"Type" : "Callee"
+			},
+			"strcat" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strchr" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"strcpy" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"strlen" : 
+			{
+				"Count" : 8,
+				"Type" : "Callee"
+			},
+			"strncmp" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"read" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"readlink" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"resp_code_msg" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "public_ip.c",
+			"LLVM_Type" : "i8* (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"run_background_command" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "i32 (i32*, i8*, i8**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 8,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"dup2" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"execvp" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"exit" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fclose" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"fileno" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"fork" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 6,
+				"Type" : "Callee"
+			},
+			"open" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"send_info_notif" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"LLVM_Type" : "i32 (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"send_notification" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "pushover.c",
+			"LLVM_Type" : "i32 (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 10,
+				"Type" : "Callee"
+			},
+			"__isoc99_fscanf" : 
+			{
+				"Count" : 8,
+				"Type" : "Callee"
+			},
+			"atoi" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"close" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"connect" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fclose" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fdopen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fgets" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"fprintf" : 
+			{
+				"Count" : 6,
+				"Type" : "Callee"
+			},
+			"htons" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 17,
+				"Type" : "Callee"
+			},
+			"llvm.memcpy.p0i8.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.memset.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 9,
+				"Type" : "Callee"
+			},
+			"send_info_notif" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"socket" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strcmp" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"strlen" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"set_signal_handler" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"llvm.memset.p0i8.i32" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"sigaction" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"setbuf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct._IO_FILE*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"open_msg_file" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"setenv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"setitimer" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, %struct.itimerval*, %struct.itimerval*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"configure_timer" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"setsid" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"sigaction" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, %struct.sigaction*, %struct.sigaction*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"set_signal_handler" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"signal" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)* (i32, void (i32)*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"sleep" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"snprintf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_export" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"GPIO_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"send_info_notif" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"socket" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"stderr" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"strcat" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strchr" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strcmp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"send_notification" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strcpy" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i8*, i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"get_public_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"update_ip_msg" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strerror" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8* (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"configure_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"configure_timer" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"export_gpios" : 
+			{
+				"Count" : 5,
+				"Type" : "Caller"
+			},
+			"hostname_to_ip_at_dns" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"init_polling" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"polling_thread" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"unexport_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"wait_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strftime" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32, i8*, %struct.tm*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_localtime_str" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strlen" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"get_current_exec_path" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pushover_init" : 
+			{
+				"Count" : 8,
+				"Type" : "Caller"
+			},
+			"send_notification" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"strncmp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"pushover_init" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"syslog" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"time" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_localtime_str" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"timer_handler" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Controller" : "alarm4pi.c",
+			"Filename" : "alarm4pi.c",
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"timer_handler.count" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"timer_handler" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"umask" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"daemonize" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"unexport_gpios" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "bcm_gpio.c",
+			"Filename" : "bcm_gpio.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_unexport" : 
+			{
+				"Count" : 5,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"wait_polling_end" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"update_ip_msg" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"get_public_ip" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"send_info_notif" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"snprintf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strcmp" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"strcpy" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"usecs" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "util.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"gettimeofday" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"init_polling" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"usleep" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_export" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"vfprintf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct._IO_FILE*, i8*, [1 x i32])*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"vprintf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, [1 x i32])*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"msg_printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"wait_polling_end" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Controller" : "gpio_polling.c",
+			"Filename" : "gpio_polling.c",
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"pthread_join" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"unexport_gpios" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"wait_processes" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "proc_helper.c",
+			"LLVM_Type" : "i32 (i32*, i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__errno_location" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"alarm" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"llvm.dbg.declare" : 
+			{
+				"Count" : 7,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"msg_printf" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"strerror" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"waitpid" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"waitpid" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i32*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"wait_processes" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"write" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"GPIO_direction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_export" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_unexport" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"GPIO_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	}
+}

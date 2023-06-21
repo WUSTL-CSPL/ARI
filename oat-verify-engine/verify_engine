@@ -1,0 +1,1757 @@
+#!/usr/bin/env python
+#
+# ARMv8 binary replay
+#
+# Copyright (c) 2018 Northeastern University
+#
+import argparse
+import binascii
+import ConfigParser
+import logging
+import math
+import mmap
+import os.path
+import struct
+import sys
+from argparse import Namespace
+from bitarray import bitarray
+from capstone.arm64 import *
+from capstone import *
+from capstone.arm import *
+from enum import Enum
+from datetime import datetime
+from print_arm64_inst import print_insn_detail
+from xprint import to_hex, to_x
+import subprocess
+from elftools.elf.elffile import ELFFile
+from pyblake2 import blake2s
+import struct
+
+CONFIG_SECTION_CODE_ADDRESSES = 'code-addresses'
+
+CONFIG_DEFAULTS = {
+        'load_address'   : '0x0000',
+        'text_start'     : None,
+        'text_end'       : None,
+        'cfv_init'       : None,
+        'cfv_quote'      : None,
+        'omit_addresses' : None,
+        'tracefile'      : None,
+        'indi_tgt_file'  : None,
+        'enter_exit_file'  : None,
+}
+
+def read_config(pathname):
+    parser = ConfigParser.SafeConfigParser(CONFIG_DEFAULTS)
+    parser.read(pathname)
+
+    return Namespace(
+            load_address   = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'load_address'),
+            text_start     = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'text_start'),
+            text_end       = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'text_end'),
+            cfv_init       = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'cfv_init'),
+            cfv_quote      = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'cfv_quote'),
+            omit_addresses = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'omit_addresses'),
+            tracefile      = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'tracefile'),
+            indi_tgt_file  = parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'indi_tgt_file'),
+            enter_exit_file= parser.get(CONFIG_SECTION_CODE_ADDRESSES, 'enter_exit_file'),
+    )
+
+def hexbytes(insn):
+    width = int(pow(2, math.ceil(math.log(len(insn))/math.log(2))))
+    return "0x" + binascii.hexlify(bytearray(insn)).zfill(width)
+
+def main():
+    parser = argparse.ArgumentParser(description='ARMv8 Trace Based Binary Replay Tool')
+    parser.add_argument('file', nargs='?', metavar='FILE',
+            help='binary file to instrument')
+    parser.add_argument('-L', '--load-address', dest='load_address', default=None,
+            help='load address of binary image')
+    parser.add_argument('--text-start', dest='text_start', default=None,
+            help='start address of section to instrument')
+    parser.add_argument('--text-end', dest='text_end', default=None,
+            help='end address of section to instrument')
+    parser.add_argument('--omit-addresses', dest='omit_addresses', default=None,
+            help='comma separated list of addresses of instructions to omit from instrumentation')
+    parser.add_argument('-l', '--little-endian', dest='flags', default=[],
+            action='append_const', const=CS_MODE_LITTLE_ENDIAN,
+            help='disassemble in little endian mode')
+    parser.add_argument('-big', '--big-endian', dest='flags', default=[],
+            action='append_const', const=CS_MODE_BIG_ENDIAN,
+            help='disassemble in big endian mode')
+    parser.add_argument('-o', '--outfile', dest='outfile', default=None,
+            help='outfile for branch table')
+    parser.add_argument('-t', '--tracefile', dest='tracefile', default=None,
+            help='trace file for replay')
+    #AMI
+    parser.add_argument('-i', '--indi_tgt_file', dest='indi_tgt_file', default=None,
+            help='log file for indirect targets')
+    #AMI
+    parser.add_argument('-ee','--enter_exit_file', dest = 'enter_exit_file', default=None,
+            help='other compartment enter and exist logs')
+
+    parser.add_argument('-bf','--binary_file', dest = 'binary_file', default=None,
+            help='the path of the final binary file')
+
+    parser.add_argument('-rt','--rt_hash_file', dest = 'rt_hash_file', default=None,
+            help='the path of return hash file')
+
+    parser.add_argument('-cr','--crit_cpt_file', dest = 'crit_cpt_file', default=None,
+            help='the path of critical compartment file')
+
+    parser.add_argument('-c', '--config', dest='config', default=None,
+            help='pathname of configuration file')
+    parser.add_argument('--verbose', '-v', action='count',
+            help='verbose output (repeat up to three times for additional information)')
+
+
+
+    # compartment transfer trampoline addresses
+    # .global __tsf_direct_jmp_checking         b
+    # .global __tsf_direct_jmp_link_checking    bl
+    # .global __tsf_indirect_jmp_checking       bx
+    # .global __tsf_indirect_jmp_link_checking  blx
+    # .global __tsf_bkwd_bx_lr_checking         bx lr
+    # .global __tsf_bkwd_pop_pc_checking        pop pc 
+
+
+    #AMI starts
+    # parser.add_argument("-b", '--b-transfer-trampoline_address', dest ='b_tsf', default = None, 
+    #         help='trampoline address of compartment transfer with b')
+
+    # parser.add_argument("-bl", '--bl-transfer-trampoline_address', dest = 'bl_tsf', default = None,
+    #         help='trampoline address of compartment transfer with bl' )
+
+    # parser.add_argument("-bx", '--bx-transfer-trampoline_address', dest = 'bx_tsf', default = None,
+    #         help='trampoline address of compartment transfer with bx' )
+
+    # parser.add_argument("-blx", '--blx-transfer-trampoline_address', dest = 'blx_tsf', default = None,
+    #         help='trampoline address of compartment transfer with blx' )
+
+    # parser.add_argument("-bxlr", '--bxlr-transfer-trampoline_address', dest = 'bxlr_tsf', default = None,
+    #         help='trampoline address of compartment transfer with bxlr')
+
+    # parser.add_argument("-poppc", '--poppc-transfer-trampoline_address', dest = 'poppc_tsf', default = None,
+    #         help='trampoline address of compartment transfer with poppc')
+    #AMI ends
+
+
+    args = parser.parse_args()
+
+    if args.verbose is None:
+        logging.basicConfig(format='%(message)s',level=logging.ERROR)
+    if args.verbose is 1:
+        logging.basicConfig(format='%(message)s',level=logging.WARNING)
+    if args.verbose is 2:
+        logging.basicConfig(format='%(message)s',level=logging.INFO)
+    if args.verbose >= 3:
+        logging.basicConfig(format='%(message)s',level=logging.DEBUG)
+
+    try:
+        config = read_config(args.config if args.config is not None
+                else CONFIG_DEFAULT_PATHNAME)
+    except ConfigParser.MissingSectionHeaderError as error:
+            logging.error(error)
+            sys.exit(1)
+    def get_req_opt(opt):
+        args_value =  getattr(args, opt) if hasattr(args, opt) else None
+        config_value = getattr(config, opt) if hasattr(config, opt) else None
+
+        if args_value is not None:
+            return args_value
+        elif config_value is not None:
+            return config_value
+        else:
+            exit("%s: required option '%s' not defined" % (sys.argv[0], opt));
+
+    def get_csv_opt(opt):
+        args_value =  getattr(args, opt) if hasattr(args, opt) else None
+        config_value = getattr(config, opt) if hasattr(config, opt) else None
+
+        if args_value is not None:
+            return args_value.split(',')
+        elif config_value is not None:
+            return config_value.split(',')
+        else:
+            return []
+
+    opts = Namespace(
+            binfile        = args.file,
+            outfile        = args.outfile,
+            cs_mode_flags  = args.flags,
+            load_address   = int(get_req_opt('load_address'),   16),
+            text_start     = int(get_req_opt('text_start'),     16),
+            text_end       = int(get_req_opt('text_end'),       16),
+            cfv_init       = int(get_req_opt('cfv_init'),       16),
+            cfv_quote      = int(get_req_opt('cfv_quote'),      16),
+            #AMI starts
+            # b_tsf          = int(get_req_opt('b'),              16),
+            # b_tsf          = int(get_req_opt('b'),              16),
+            #AMI ends
+            omit_addresses = [int(i,16) for i in get_csv_opt('omit_addresses')],
+            tracefile      = args.tracefile,
+            indi_tgt_file  = args.indi_tgt_file,
+            enter_exit_file= args.enter_exit_file,
+            binary_file    = args.binary_file,
+            crit_cpt_file  = args.crit_cpt_file,
+            rt_hash_file   = args.rt_hash_file,
+
+    )
+
+    logging.debug("load_address         = 0x%08x" % opts.load_address)
+    logging.debug("text_start           = 0x%08x" % opts.text_start)
+    logging.debug("text_end             = 0x%08x" % opts.text_end)
+    logging.debug("cfv_init             = 0x%08x" % opts.cfv_init)
+    logging.debug("cfv_quote            = 0x%08x" % opts.cfv_quote)
+    logging.debug("omit_addresses       = %s" % ['0x%08x' % i for i in opts.omit_addresses])
+    logging.debug("tracefile            = %s" % opts.tracefile)
+    logging.debug("indi_tgt_file        = %s" % opts.indi_tgt_file)
+    logging.debug("enter_exit_file      = %s" % opts.enter_exit_file)
+    logging.debug("binary_file      = %s" % opts.binary_file)
+    logging.debug("crit_cpt_file      = %s" % opts.crit_cpt_file)
+    logging.debug("rt_hash_file      = %s" % opts.rt_hash_file)
+
+
+
+    if not os.path.isfile(args.file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args.file));
+
+    if not os.path.isfile(args.tracefile):
+        exit("%s: file '%s' not found" % (sys.argv[0], args.tracefile));
+
+    if not os.path.isfile(args.indi_tgt_file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args, indi_tgt_file))
+
+    if not os.path.isfile(args.enter_exit_file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args, enter_exit_file))
+
+    if not os.path.isfile(args.binary_file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args, binary_file))
+
+    if not os.path.isfile(args.crit_cpt_file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args, crit_cpt_file))
+
+    if not os.path.isfile(args.rt_hash_file):
+        exit("%s: file '%s' not found" % (sys.argv[0], args, rt_hash_file))
+
+    hookit(opts)
+
+
+
+#the class for operations on branch decision
+class ExecutionTrace:
+    def __init__(self, tracefile):
+        self.__fn = tracefile
+        self.__idx = 0
+        #get branch decision from measurement
+        self.__trace = self.get_trace(tracefile)
+        self.__len = len(self.__trace)
+
+    #get the next branch decision
+    def next_branch(self):
+        # print ("idx:%d , flag:%c"% (self.__idx, self.__trace[self.__idx]))
+        if (self.__idx < self.__len):
+            next_branch_tgt = self.__trace[self.__idx]
+            self.__idx += 1
+            return next_branch_tgt
+        else:
+            return -1
+
+    #get the branch decisions from measurments
+    def get_trace(self, tracefile):
+        cpsrs = []
+        with open(tracefile, 'r') as file:
+            for line in file:
+                hex_tgt_addr = int(line.strip(), 16)
+                cpsrs.append(hex_tgt_addr)
+           #  print(branch_target)
+           #  # opts.load_address
+           #  # print(opts.text_start)
+           #  # print(opts.load_address)
+        return cpsrs
+
+
+
+#AMI entry and exit logs file
+class EntryExitLog:
+    def __init__(self, entry_exit_file):
+        self.__fn = entry_exit_file
+        self.__idx = 0
+        self.__entry_exit_logs = self.get_entry_exit_logs(entry_exit_file)
+        self.__len = len(self.__entry_exit_logs)
+
+    #get next entry exit entity from external compartment to internal compartment
+    #each entity has format of [entry(1)/exit(0), address]
+    def next_entry_exit(self):
+        if(self.__idx < self.__len):
+            next_tsf_record = self.__entry_exit_logs[self.__idx]
+            self.__idx += 1
+            print("next_entry_exit" + str(hex(next_tsf_record[0])) + "," + str(hex(next_tsf_record[1])))
+            return next_tsf_record
+        else:
+            return None
+                
+    #get cpt transfer records from cpt measurments 
+    def get_entry_exit_logs(self, entry_exit_file):
+        #[src, des] of each compartment tsf
+        pairs = []
+        with open(entry_exit_file, 'r') as file:
+            for line in file:
+                # Strip off any whitespace
+                stripped_line = line.strip()
+                # Split the line into two parts
+                parts = stripped_line.split()
+                if len(parts) != 2:
+                    print("Warning: Line does not contain exactly two parts: {stripped_line}")
+                    continue
+                # Convert each part to an integer and add to the list
+                pair = [int(part, 16) for part in parts]
+                pairs.append(pair)
+        # print(pairs)
+        return pairs
+
+    def get_tsf_mrmt(self):
+        return self.__entry_exit_logs
+
+
+
+#AMI indirect targets log file
+class IndirectTargetLog:
+    def __init__(self, targetfile):
+        self.__fn = targetfile
+        self.__idx = 0
+        self.__ind_tgt_log = self.get_ind_tgt(targetfile)
+        self.__len = len(self.__ind_tgt_log)
+
+    #get next indirect target
+    def next_indi_target(self):
+        # print ("idx:%d , target:0x%x" % (self.__idx, int(self.__ind_tgt_log[self.__idx].strip(), 16)))
+        if(self.__idx < self.__len):
+            target = int(self.__ind_tgt_log[self.__idx].strip(), 16)
+            self.__idx += 1
+            return target
+        else:
+            print("unexpecte indirect symbol\n")
+            return
+
+    def get_ind_tgt(self, targetfile):
+        with open(targetfile, 'r') as f:
+            targets = f.readlines()
+
+        print(targets)
+        # assert(len(targets) != 0)
+        # return targets[0].strip()
+        return targets
+
+
+def get_function_addresses(binary_path, function_names):
+    function_addresses = {}
+    with open(binary_path, 'rb') as file:
+        elffile = ELFFile(file)
+        symbol_tables = [s for s in elffile.iter_sections() if s['sh_type'] == 'SHT_SYMTAB']
+        for symbol_table in symbol_tables:
+            for symbol in symbol_table.iter_symbols():
+                if symbol.name in function_names:
+                    function_addresses[symbol.name] = addr2off(int(hex(symbol['st_value']), 16))
+    return function_addresses
+
+
+def run_command_and_save(command, filename):
+    with open(filename, 'w') as file:
+        output = subprocess.check_output(command, shell=True)
+        file.write(output)
+
+#get the address space of each compartment
+#the column is the number of column that needs to be extracted, starting from 0
+def read_code_regions(filename, column):
+    result = []
+    with open(filename, 'r') as file:
+        for line in file:
+            # Split the line into columns
+            columns = line.strip().split()
+            # Check if the line has enough columns and if the second one starts with ".CODE_REGION_"
+            if len(columns) >= (column + 1) and columns[1].startswith(".CODE_REGION_"):
+                # Add the fourth column to the result
+                result.append(int(columns[column], 16))
+    return result
+
+#ge the target address of veneer functions in critical compartment
+def read_veneer_address(tmp_veneer_filename):
+    result = []
+    with open(tmp_veneer_filename, 'r') as file:
+        for line in file:
+            # Split the line into columns
+            columns = line.strip().split()
+            # Check if the line has enough columns and if the second one starts with ".CODE_REGION_"
+            if columns:
+                address = columns[0]
+                # print(hex(int(address, 16)))
+                result.append(addr2off(int(address, 16)))
+    return result 
+
+def read_crit_func_addr(tmp_crit_func_addr_filename):
+    result = []
+    with open(tmp_crit_func_addr_filename, 'r') as file:
+        for line in file:
+            # Split the line into columns
+            columns = line.strip().split()
+            # Check if the line has enough columns and if the second one starts with ".CODE_REGION_"
+            if columns:
+                address = columns[0]
+                # print(hex(int(address, 16)))
+                if int(address, 16) >= 0x4000000:
+                    result.append(addr2off(int(address, 16)))
+    return result     
+
+
+#find the compartment number of given address
+def find_cpt(addr, cpt_list):
+    for i in range(len(cpt_list) - 1):
+        if cpt_list[i] <= addr < cpt_list[i+1]:
+            return i
+    return len(cpt_list) - 1
+
+
+#get the cpt number of critical cpts
+def read_crit_cpt(crit_cpt_file):
+    with open(crit_cpt_file, 'r') as file:
+        line = file.readline()
+        crit_cpt = [int(num) for num in line.split()]
+    return crit_cpt
+
+#check whether an jump instruiction is compartment transfer to critical one
+#the return [x, y], x means whether the jump inst is compartment transfer
+#y means whether the compartment tranfer inst target is critical one
+#1 means yes, 0 means no
+
+cpt_addr_space_offset = []
+
+cpt_addr_space_address = []
+
+critical_cpt = []
+
+recording_func_addr = []
+
+veneer_address  = []
+
+crit_func_addr = []
+
+#the address in stack is not offset
+#the hash shoudl not use offset
+stack = []
+
+#the stack used to record the invocation type for critical compartment
+#1 means call from crit cpt, 0 means call from non-crit cpt
+crit_func_inv_type_stack = []
+
+#decide whether a given address is in critical compartment
+def is_cri_cpt(addr):
+    global cpt_addr_space_offset
+    global critical_cpt
+
+    cpt = find_cpt(addr, cpt_addr_space_offset)
+
+    if cpt in critical_cpt:
+        return True
+    else:
+        return False
+
+
+def is_crit_cpt_tsf(inst, dest_addr):
+    global cpt_addr_space_offset
+    global critical_cpt
+    global stack
+
+    decs = [0, 0]
+    src_addr = inst.address
+
+    #get source and destination compartment
+    src_cpt = find_cpt(src_addr, cpt_addr_space_offset)
+    dest_cpt = find_cpt(dest_addr, cpt_addr_space_offset)
+
+    #not cross cpt tsf
+    if src_cpt == dest_cpt:
+        decs[0] = 0
+        return decs
+    #cross cpt tsf
+    else:
+        decs[0] = 1
+
+    #check whether a compartment transfer is from critical to critical
+    if dest_cpt in critical_cpt:
+        decs[1] = 1
+    return decs
+
+    # print("src cpt: " + str(src_cpt))
+    # print("src cpt: " + str(dest_cpt))
+
+
+def insert_line_if_needed(file_name):
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+        first_line = lines[0]
+        first_line_count = lines.count(first_line)
+
+        if first_line_count >= 5:
+            second_appearance_index = lines[1:].index(first_line) + 1
+            line_before_second_appearance = lines[second_appearance_index - 1]
+            columns = line_before_second_appearance.split(' ')
+            print columns
+            if columns[1] == '4000000\n':
+                # Insert at the beginning
+                lines.insert(0, line_before_second_appearance)
+
+    with open(file_name, 'w') as file:
+        for line in lines:
+            file.write(line)
+
+
+
+
+
+def addr2off(addr):
+    global cpt_addr_space_address
+    global cpt_addr_space_offset
+
+    cpt_num =  find_cpt(addr, cpt_addr_space_address)
+    off_base_addr = cpt_addr_space_offset[cpt_num]
+    offset = addr - cpt_addr_space_address[cpt_num]
+    return off_base_addr + offset
+
+def off2addr(off_addr):
+    global cpt_addr_space_address
+    global cpt_addr_space_offset
+
+    cpt_num = find_cpt(off_addr, cpt_addr_space_offset)
+    base_addr = cpt_addr_space_address[cpt_num]
+    offset = off_addr - cpt_addr_space_offset[cpt_num]
+    return base_addr + offset
+
+
+
+#all measurement using virtual address instread of offset
+def find_first_crit_cpt(text_start_addr, cpt_tsf_measurement):
+
+    # print("cpt_tsf_measurement: " + str(cpt_tsf_measurement))
+
+    global stack
+    global cpt_addr_space_address
+    global critical_cpt
+    global crit_func_inv_type_stack
+
+
+    while(True):
+        cpt_tsf_src_dest = cpt_tsf_measurement.next_entry_exit()
+        #nothing to be replayed
+        if cpt_tsf_src_dest == None:
+            return None
+        else:
+            #decide whether the destination is in critical cpt
+            #find the first tsf to critical cpt
+            dest_cpt_num =  find_cpt(cpt_tsf_src_dest[1], cpt_addr_space_address)
+            if dest_cpt_num in critical_cpt:
+                #push source address to stack
+                stack.append(addr2off(cpt_tsf_src_dest[0]))
+                #jinwen debug stack
+                print("push")
+                print_stack(stack)
+                #push the invocation type nc->c to stack
+                crit_func_inv_type_stack.append(0)
+                #return the first critical cpt address
+                # print(addr2off(cpt_tsf_src_dest[1]))
+                return addr2off(cpt_tsf_src_dest[1])
+
+        return None
+
+
+    #==================original codes=================
+
+
+    # #check wheter start function is critical one
+    # start_cpt_num = find_cpt(text_start_addr, cpt_addr_space_offset)
+    # #return text_start_addr if start address is in critical compartment
+    # if start_cpt_num in critical_cpt:
+    #     #jinwenTODO: instrumentataion the return of the first ending return instruction of an application
+    #     #CPS is rarely ending
+    #     stack.append(-1)
+    #     return text_start_addr
+    # #start address is not in critical compartment, traverse cpt tsf measurement
+    # #to find out the fist critical compartment
+    # else:
+    #     #WARN: Not Test
+    #     #traverse the cpt tsf measurements        
+    #     while(True):
+    #         cpt_tsf_src_dest = cpt_tsf_measurement.next_entry_exit()
+
+    #         #jinwen write this for debug
+    #         if cpt_tsf_src_dest[1] != 0x4000000:
+    #             continue
+
+    #         #measurment traverse done
+    #         if cpt_tsf_src_dest == None:
+    #             break
+    #         #decide whether the destination is in critical cpt
+    #         #find the first tsf to critical cpt
+    #         dest_cpt_num =  find_cpt(cpt_tsf_src_dest[1], cpt_addr_space_address)
+    #         if dest_cpt_num in critical_cpt:
+    #             #push source address to stack
+    #             stack.append(addr2off(cpt_tsf_src_dest[0]))
+    #             #jinwen debug stack  
+    #             print("push")
+    #             print_stack(stack)
+    #             #return the first critical cpt address
+    #             # print(addr2off(cpt_tsf_src_dest[1]))
+    #             return addr2off(cpt_tsf_src_dest[1])
+    #     return None
+
+#jinwenTODO not tested
+#flag_push_stack indicate whether the source address of the next non-crit to crit
+#is pushed on on to stack
+#return None if no critical cpt is transfereed
+def find_next_crit_cpt(cpt_tsf_measurement, flag_push_stack):
+    global critical_cpt
+    global crit_func_addr
+    global crit_func_inv_type_stack
+    # print("enter")
+    while(True):
+        cpt_tsf_src_dest = cpt_tsf_measurement.next_entry_exit()
+        # print(hex(cpt_tsf_src_dest[1]))
+        #measurement traverse done
+        if cpt_tsf_src_dest == None:
+            return None
+
+        #decide whether the destination is in critical cpt
+        #find the next tsf to critical cpt
+        dest_cpt_num =  find_cpt(cpt_tsf_src_dest[1], cpt_addr_space_address)
+        # print(dest_cpt_num)
+        if dest_cpt_num in critical_cpt:
+            # print("criti")
+            #push source address to stack
+            if flag_push_stack == 1:
+                #only push the return address of ciritcal function call
+                if addr2off(cpt_tsf_src_dest[1]) in crit_func_addr:
+                    #recording the invoke from critical cpt
+                    # print("@@@@@@")
+                    crit_func_inv_type_stack.append(0)
+                    stack.append(addr2off(cpt_tsf_src_dest[0]))
+                    #jinwen debug stack  
+                    print("push")
+                    print_stack(stack)
+            return addr2off(cpt_tsf_src_dest[1])
+            #return the first critical cpt address
+            # print(addr2off(cpt_tsf_src_dest[1]))
+
+#get the next inst address of direct instruction
+def direct_jump_wo_lr(inst, dest_addr, cpt_tsf_measurement):
+    
+    target_address = -1
+
+    #check whether direct jump cross compartment
+    cpt_tsf_desc = is_crit_cpt_tsf(inst, dest_addr)
+    #not cross cpt
+    if cpt_tsf_desc[0] == 0:
+        #return jump target address to be modified
+        return dest_addr
+    #cross compartment
+    else:
+        #check whether it go into critical cpt
+        #if going to critical cpt
+        # print("bcc cross cpt")
+        if cpt_tsf_desc[1] == 1:
+            target_address = dest_addr
+            #TODOjinwen, we also need to manipulate tsf_measurement
+            #because all intera cpt tsf are recorded, including crit->crit
+
+        #if going to non-critical cpt
+        else:
+            #traverse compartment transfer to get the next critical 
+            target_address = addr2off(find_next_crit_cpt(cpt_tsf_measurement, 0))
+
+        return target_address
+
+
+
+#given an instruction, decide the next instruction to be traverse
+#the return value is the address of next instruction
+def direct_jump_w_lr(inst, dest_addr, cpt_tsf_measurement, code, base_address, opts):
+    
+    global stack
+    global veneer_address
+    global crit_func_addr
+    global crit_func_inv_type_stack
+
+    target_address = -1
+
+    # print("dest_addr" + str(hex(dest_addr)))
+    # print("veneer_address" + str(hex(veneer_address)))
+
+    #check whether the destination address is veneer address
+    if dest_addr in veneer_address:
+        target_address = get_addr_in_veneer(code, dest_addr, base_address)
+        # print(hex(target_address))
+        dest_addr = target_address
+        # print("dest_addr:" + str(hex(dest_addr)))
+        #bypass library function calls
+        if(dest_addr < opts.text_start or dest_addr > opts.text_end):
+            # print("library function skipping\n")
+            return (inst.address + 4)
+
+    #TODO:
+    #if control flow goes out of the critical compartment
+    #check whether target is another critical compartment                        
+    #check whether targets are other compartment
+    # outside_compt = AMI_check_outside_compt(target_address, critical_start, critical_end)
+    cpt_tsf_desc = is_crit_cpt_tsf(inst, dest_addr)
+    
+    #check wheter bl cross compartment
+    #not cross compartment
+    if cpt_tsf_desc[0] == 0:
+        #only push the return address of ciritcal function call
+        if dest_addr in crit_func_addr:
+            #recording the invoke from critical cpt
+            crit_func_inv_type_stack.append(1)
+            #push return address onto stack
+            stack.append(inst.address + 4)
+            print("c->c")
+            print("push")
+            print_stack(stack)
+        #modify target address
+        target_address = dest_addr
+    #cross compartment
+    else:
+        #check whether it go into critical cpt
+        #if going to critical cpt
+        if cpt_tsf_desc[1] == 1:
+            #only push the return address of ciritcal function call
+            if dest_addr in crit_func_addr:
+                #recording the invoke from critical cpt
+                crit_func_inv_type_stack.append(1)
+                #push return address onto stack
+                stack.append(inst.address + 4)
+                print("c->c")
+                print("push")
+                print_stack(stack)
+            target_address = dest_addr
+            #TODOjinwen, we also need to manipulate tsf_measurement
+        #if going to non-critical cpt
+        else:
+
+            #push this address to help continue to replay
+            # stack.append(inst.address + 4)
+            print("c->nc")
+            # print("push")
+            # print_stack(stack)
+            #jinwenTODO push address on stack first
+            #we should push the source address of the last nc->c cpt tsf here
+            #because this is what runtime recording is the address in nc where c return to
+            target_address = find_next_crit_cpt(cpt_tsf_measurement, 1)
+
+            # stack.append(inst.address + 4)
+
+            #there is more critical compartment, pop the address pushed onto stack
+            #becaseu replay will done
+            if target_address == None:
+                # jinwen comment this
+                # print("error\n")
+                stack.pop()
+
+            # return target_address
+
+    return target_address
+
+
+#get the next instruciton of bx/bxc
+def indirect_jump_wo_lr(inst, indirect_tgt_measurement, cpt_tsf_measurement):
+
+    # assert(len(cpt_tsf_measurement)!=0)
+
+    #get the target of indirect jump
+    target_address = indirect_tgt_measurement.next_indi_target()
+
+    #if the indirect target measurment is none, the bx is cross cpt
+    if target_address == None:
+        target_address = find_next_crit_cpt(cpt_tsf_measurement, 0)
+
+    #decide wheter the target is critical or non-critical
+    cpt_tsf_desc = is_crit_cpt_tsf(inst, addr2off(target_address))
+
+    #for intra crit cpt tsf, return the target
+    if cpt_tsf_desc[0] == 0:
+        return target_address
+    #for inter cpt tsf, it may be crit->noncrit or crit->crit
+    #for crit->crit, return the target
+    elif cpt_tsf_desc[1] == 1:
+        #jinwenTODO manipulate cpt_tsf measurement
+        return target_address
+    #for crit->non-crit, find the target through cpt-tsf_measurement
+    elif cpt_tsf_desc[1] == 0:
+        # target_address = find_next_crit_cpt(cpt_tsf_measurement, 0)
+
+        #there is more critical compartment, pop the address pushed onto stack
+        #becaseu replay will done
+        if target_address == None:
+            stack.pop()
+            print("error")
+        return target_address
+
+
+#blx
+def indirect_jump_w_lr(inst, indirect_tgt_measurement, cpt_tsf_measurement):
+    # assert(len(cpt_tsf_measurement)!=0)
+
+    #get the target of indirect jump
+    target_address = indirect_tgt_measurement.next_indi_target()
+
+    #if the indirect target measurment is none, the bx is cross cpt
+    if target_address == None:
+        # stack.append(inst.address + 4)
+        print("c->nc")
+        # print("push")
+        # print_stack(stack)
+        target_address = find_next_crit_cpt(cpt_tsf_measurement, 1)
+        # cpt_tsf_desc = [1, 0]
+    else:
+        #only push the return address of ciritcal function call
+        if target_address in crit_func_addr:   
+            #recording the invoke from critical cpt
+            crit_func_inv_type_stack.append(1) 
+            #decide wheter the target is critical or non-critical
+            stack.append(inst.address + 4)
+            print("push")
+            print_stack(stack)
+    if target_address == None:
+            print("error\n")
+            stack.pop()
+
+    return target_address
+
+
+#======================original codes============================
+
+    # cpt_tsf_desc = is_crit_cpt_tsf(inst, addr2off(target_address))
+
+    # # print(cpt_tsf_desc)
+    # #for intra crit cpt tsf, return the target
+    # if cpt_tsf_desc[0] == 0:
+    #     #push return address onto stack
+    #     stack.append(inst.address + 4)
+    #     return target_address
+    # #for inter cpt tsf, it may be crit->noncrit or crit->crit
+    # #for crit->crit, return the target
+    # elif cpt_tsf_desc[1] == 1:
+    #     #jinwenTODO manipulate cpt_tsf measurement
+    #     #push the address onto stack
+    #     stack.append(inst.address + 4)
+    #     return target_address
+    # #for crit->non-crit, find the target through cpt-tsf_measurement
+    # elif cpt_tsf_desc[1] == 0:
+    #     # target_address = find_next_crit_cpt(cpt_tsf_measurement, 1)
+    #     stack.append(inst.address + 4)
+    #     #there is more critical compartment, pop the address pushed onto stack
+    #     #becaseu replay will done
+        
+    #     return target_address    
+
+
+
+def get_addr_in_veneer(code, veneer_start, base_address):
+    next_byte_addr = veneer_start + 4
+    # next_four_bytes = code[next_byte_addr - current_address: next_byte_addr - current_address + 4]
+    next_four_bytes = code[next_byte_addr - base_address: next_byte_addr - base_address + 4]
+    reversed_bytes = next_four_bytes[::-1]
+    integer_value = struct.unpack('>I', reversed_bytes)[0]  
+    # print("base addr:" + str(hex(base_address)))
+    # print("veneer_start:" + str(hex(veneer_start)))
+    # print("integer_value:" + str(hex(integer_value)))
+    return addr2off(integer_value)
+ 
+#b/bl ____tsf_direct_jmp_recording_veneer may jump to the same compartment 
+#because of compiler optimization when two same functions are invoked.
+
+
+ret_hash = None
+
+def hash_return(addr):
+    
+    global ret_hash
+
+    ret_addr = off2addr(addr)
+
+    if ret_hash == None:
+        ret_hash = blake2s()
+        # ret_hash.update(struct.pack('i', 0x4000150))
+    else:
+        pass
+    #convert memory space to memory offset
+    ret_hash.update(struct.pack('i', ret_addr))
+    print("++++++hash return address: " + str(hex(ret_addr)))
+
+def check_ret_integrity(ret_hash_filename):
+    global ret_hash
+    
+    #read runtime measured return hash
+    with open(ret_hash_filename, 'r') as file:
+        lines = file.readlines()
+    final_hash = ''.join(line.rstrip('\n') for line in lines)
+    #copmparing it with the one get from reexecution
+    print("hash from runtime:"+ final_hash)
+    print("hash from replay: " + ret_hash.hexdigest())
+    if final_hash == ret_hash.hexdigest():
+        print("Return Integrity Verificaiotn Pass!")
+    else:
+        print("Return Integrity Verification Fail!")
+
+def print_stack(stack):
+    for i in stack:
+        print(hex(i))
+
+def hookit(opts):
+
+    # md = Cs(CS_ARCH_ARM64, CS_MODE_ARM + sum(opts.cs_mode_flags))
+    md = Cs(CS_ARCH_ARM, CS_MODE_ARM)
+    md.detail = True
+    replay_start = False
+    replay_stop = False
+    taken = False
+    target_address = 0
+
+    insert_line_if_needed(opts.enter_exit_file)
+
+    # jinwen comment this for debug
+    trace = ExecutionTrace(opts.tracefile)
+    indirect_targets = IndirectTargetLog(opts.indi_tgt_file)
+    entry_exit = EntryExitLog(opts.enter_exit_file)
+
+    # trace = None
+    # indirect_targets = None
+    # entry_exit = None
+
+    trace_idx = 0
+    stack = []
+    ofd = open(opts.outfile,'w')
+    last_flag = 'eq'
+    last_ne_flag = False
+    last_lt_flag = False
+    critical_start = 0x00000000
+    critical_end = 0xffffffff
+
+    debug_flag = 0
+
+    global cpt_addr_space_offset
+    global cpt_addr_space_address
+    global critical_cpt
+    global stack
+    global recording_func_addr
+    global veneer_address
+    global crit_func_addr
+    global crit_func_inv_type_stack
+    global ret_hash
+
+    #get address space of each compartment (address, offset), this only runs once
+    if len(cpt_addr_space_offset) == 0:
+        cmd_read_elf = "readelf -S " + opts.binary_file
+        tmp_filename = "./result_readelf"
+        run_command_and_save(cmd_read_elf, tmp_filename)
+        #get offset address space of each cpt
+        cpt_addr_space_offset = read_code_regions(tmp_filename, 4)
+        # print(cpt_addr_space_offset)
+        #get address space of each cpt
+        cpt_addr_space_address = read_code_regions(tmp_filename, 3)
+        # print(cpt_addr_space_address)
+        critical_cpt = read_crit_cpt(opts.crit_cpt_file)
+
+    #get venner addresses
+    cmd_get_veneer = "cat "+ opts.tracefile.replace("ARI_branch.txt","") + "arducopter.S" +" | grep _veneer\>:"
+    tmp_veneer_filename = "./veneer_address"
+    run_command_and_save(cmd_get_veneer, tmp_veneer_filename)
+    veneer_address = read_veneer_address(tmp_veneer_filename)
+
+    #get function address in critical compartments
+    cmd_get_crit_func_addrs = "cat "+ opts.tracefile.replace("ARI_branch.txt","") + "arducopter.S" +" | grep \>:"
+    tmp_crit_func_addr_filename = "./crit_fun_filename"
+    run_command_and_save(cmd_get_crit_func_addrs, tmp_crit_func_addr_filename)
+    crit_func_addr = read_crit_func_addr(tmp_crit_func_addr_filename)
+
+
+    with open(opts.binfile, "rb") as f:
+        # print("while");
+
+        #TODO: the offset needs to be extract from the section headers
+        mm = mmap.mmap(f.fileno(), 0, prot=mmap.PROT_READ)
+
+        #jinwen comment this for debug
+        #finding the first critical compartment to be traversed
+        first_cri_cpt_start_addr = find_first_crit_cpt(opts.text_start, entry_exit)     
+        #no critical codes to be replayed
+        if first_cri_cpt_start_addr == None:
+            return
+        current_address = first_cri_cpt_start_addr
+        offset = current_address - opts.load_address
+
+        #jinwen comment this for debug original statements
+        # offset = opts.text_start - opts.load_address
+
+        #get the instrumented runtime recording function invocations
+        #that should be passe
+        binary_path = opts.binary_file
+        function_names = ["__cfv_icall_blx", "__cfv_icall_blx_pre", "__tsf_bkwd_pop_pc_recording",\
+        "__tsf_direct_jmp_link_recording","__tsf_direct_jmp_link_cc_recording","__tsf_direct_jmp_recording",\
+        "__tsf_direct_jmp_cc_recording"]
+        recording_func_addr = get_function_addresses(binary_path, function_names)
+        # for function_name, address in recording_func_addr.items():
+        #     print("Function: {}, Address: {}".format(function_name, address))
+
+        # print_stack(stack)
+        print('text_start ' + str(hex(opts.text_start)))
+        print('load_address ' + str(opts.load_address))
+        print('current_address' + str(hex(current_address)))
+        logging.debug("hooking %s from 0x%08x to 0x%08x" % (opts.binfile, offset, opts.text_end - opts.load_address))
+        mm.seek(offset)
+        code = mm.read(mm.size() - mm.tell())
+
+        prev_address = -0x0001
+
+        total_cnt = 0
+
+
+        # return
+
+        while True:
+
+            taken = False
+            if replay_stop == True:
+                break
+
+            for i in md.disasm(code, current_address):
+
+                # ret_addr = get_addr_in_veneer(code, 0x2442c0, current_address)
+
+                # print(hex(ret_addr))
+
+                # print("Next four bytes: %s" % binascii.hexlify(next_four_bytes))
+                # return
+
+                total_cnt += 1
+
+                #jinwen writes this for debug
+                # if total_cnt == 100:
+                #     return
+                print("0x%x:\t%s\t%s" %(i.address, i.mnemonic, i.op_str))
+                # continue
+
+                # Workaround for md.disasm returning dublicate instructions
+                if i.address == prev_address:
+                    continue
+                else:
+                    prev_address = i.address
+
+                #direct branch b
+                if(i.id == ARM_INS_B):
+                    #jinwen add this for debug
+
+                    # print("0x%x:\t%s\t%s" %(i.address, i.mnemonic, i.op_str))
+
+                    target_address = i.operands[0].imm
+                    #skip library functions
+                    if(target_address < opts.text_start or target_address > opts.text_end):
+                        continue
+
+                    #non-conditional direct branch
+                    if(i.cc == ARM_CC_AL):
+                        print("ARM_INS_B")
+                        #get the next instruciton address
+                        target_address = direct_jump_wo_lr(i, target_address, entry_exit)
+                        #no more critical compartment tranfer, stop replay
+                        if target_address == None:
+                            replay_stop  = True
+                            break
+
+                        #stop contineously traverse binary
+                        taken = True
+                        #jinwen writes this line for debug
+                        # print("target_address: " + str(hex(target_address)))
+                        break
+
+                    #conditional direct branch
+                    else:
+                        # check condition
+                        print("ARM_INS_B_C")
+                        branch_decision = AMI_check_condition(i, opts, trace)
+                        #update next instruction address according to branch checking result
+                        #the branch is taken, move the the target address
+                        if(branch_decision):
+                            # print("bcc true")
+                            #get the next instruciton address
+                            # print("bcc taken")
+                            target_address = direct_jump_wo_lr(i, target_address, entry_exit)
+                            #jinwenTODO:this should be removed after modifying recording logics
+                            entry_exit.next_entry_exit()
+                            #no more critical compartment tranfer, stop replay
+                            if target_address == None:
+                                replay_stop  = True
+                                break
+
+                            taken = True
+                            #jinwen writes this line for debug
+                            # print("target_address: " + str(hex(target_address)))
+
+                            break
+
+                        #the branch is not take, move the the next instruction
+                        else:
+                            # print("bcc not taken")
+                            # print("bcc false")
+                            #jinwenTODO:this should be removed after modifying recording logics
+                            entry_exit.next_entry_exit()
+                            # pass
+
+
+                #direct branch with link bl
+                elif(i.id == ARM_INS_BL):
+                    #jinwenTODO
+                    #filter the bl instructions that jump to recording trampoine
+                    # print("0x%x:\t%s\t%s" %(i.address, i.mnemonic, i.op_str))
+                    # continue
+
+                    target_address = i.operands[0].imm
+                    
+                    #bypass the instrumentation address
+                    if target_address in recording_func_addr:
+                        print("bypass instrumentation functions")
+                        continue
+
+                    if(target_address < opts.text_start or target_address > opts.text_end):
+                        # print("library function skipping\n")
+                        continue
+                                        
+                    # non-conditional direct branch with link register                                        
+                    if(i.cc == ARM_CC_AL):
+                        # print("-----------")
+                        print("ARM_INS_BL")
+
+                        #find the target address of bl instruction
+                        target_address = direct_jump_w_lr(i, target_address, entry_exit, code, current_address, opts)
+                        # print("target_address: " + str(hex(target_address)))
+                        #no more critical compartment tranfer, stop replay
+                        if target_address == None:
+                            replay_stop  = True
+                            break
+                        #change the address of the next instruction to be traversed
+                        else:
+                            taken = True
+                            break
+
+                    # conditional direct branch with link register
+                    else:
+                        print("ARM_INS_BL_C")
+                        #check condition 
+                        branch_decision = AMI_check_condition(i, opts, trace)
+
+                        if(branch_decision):
+
+                            #get the next instruciton address
+                            target_address = direct_jump_w_lr(i, target_address, entry_exit, code, current_address, opts)
+                            #no more critical compartment tranfer, stop replay
+                            if target_address == None:
+                                replay_stop  = True
+                                break
+                            #change the address of the next instruction to be traversed
+                            else:
+                                taken = True
+                                break
+
+                        #the branch is not take, move the the next instruction
+                        else:
+                            pass
+                        #jinwenTODO:this should be removed after modifying recording logics
+                        entry_exit.next_entry_exit()
+                
+                elif(i.id == ARM_INS_POP):
+                    for op in i.operands:
+                        if op.type == ARM64_OP_REG and op.value.reg == ARM_REG_R8:
+                            print("-------pop return-------")
+                            #jinwen writes this for debugging
+                            # return
+
+                            #check whether last critical function call is inter or intra
+                            crit_inv_type = crit_func_inv_type_stack.pop()
+
+                            print("pop")
+                            print_stack(stack)
+                            target_address = stack.pop()
+                            hash_return(target_address)
+
+                            #if intra, change the address to the address popped from stack
+                            if crit_inv_type == 1:
+                                pass
+
+                            #if inter, find the find_next_criti_cpt(0)
+                            else:
+                                target_address = find_next_crit_cpt(entry_exit, 1)                                
+
+                            # return
+
+                            if target_address == None:
+                                print("!!!!!!!!!!!!Replay Done!!!!!!!!!!!!!!!\n");
+                            else:   
+                                taken = True
+                                break
+
+
+
+#=========================original coded=================================
+                            # popped_address = stack.pop()
+                            # print("pop")
+                            # print_stack(stack)
+                            # is_crit = is_cri_cpt(popped_address)
+
+                            # #after pop, if address is nc and stack is empty, 
+                            # #traverse cpt tsf, if both are empty, done
+                            # #if the popped addres is in non-critical
+                            # if is_crit == False:
+                            #     hash_return(popped_address)
+                                
+                            #     #jinwen writes this for debugging
+                            #     return
+
+                            #     if len(stack) == 0:
+                            #         #find next critical
+                            #         target_address = find_next_crit_cpt(1)
+                            #         #if no, replay is done
+                            #         if target_address == None:
+                            #             print("replay done\n")
+                            #             return
+                            #         else:
+                            #             taken = True
+                            #             break
+                            #     else:
+                            #         target_address = stack.pop()                       
+                            #         print("pop")
+                            #         print_stack(stack)
+                            #         taken = True
+                            #         break
+                            # else:
+                            #     hash_return(popped_address)
+                                
+                            #     #jinwen writes this for debugging
+                            #     return
+
+                            #     target_address = popped_address
+                            #     taken = True
+                            #     break
+
+                #indirect branch bx
+                elif(i.id == ARM_INS_BX):
+
+                    #jinwen add this for debug
+                    # continue
+
+                    #return instruction bx lr
+                    if(i.operands[0].reg == ARM_REG_LR):
+                        #TODOjinwen
+                        #this is a return, need further process
+                        break;
+                        # #pop return address from stack
+                        # target_address = stack.pop()
+                        # #return address external invocation
+                        # if(target_address == -1):
+                        #     target_address = entry_exit.next_entry_exit()[1]
+                        # taken = True
+                        # break
+
+                    #non return instruction
+                    #non-conditional indirect branch
+                    elif(i.cc == ARM_CC_AL):
+                        #this is for prototype, needed to be removed future
+                        # AMI_prototype_continue()
+                        # continue
+                        #case 1 intra branch: get next indirect target
+                        target_address = indirect_jump_wo_lr(i, indirect_targets, entry_exit)
+
+                        if target_address == None:
+                            replay_stop = True
+                            break
+
+                        #update next instruction address with operand
+                        taken = True
+                        break
+
+                    #non return instruction
+                    #conditional indirect branch 
+                    else:
+                        #check condition
+                        branch_decision = AMI_check_condition(i, opts, trace)
+                        if(branch_decision):
+                            #this is for prototype, needed to be removed future
+                            # AMI_prototype_continue()
+                            # continue
+                            #case 1 intra branch: get next indirect target
+                            target_address = indirect_jump_wo_lr(i, indirect_targets, entry_exit)
+
+                            if target_address == None:
+                                replay_stop = True
+                                break
+
+                            #update next instruction address with operand
+                            taken = True
+                            break
+                        else:
+                            pass
+
+                #indirect branch with link blx
+                elif(i.id == ARM_INS_BLX):
+                    
+                    #jinwen add this for debug
+                    # continue
+
+                    #non-conditional indirect branch with link register
+                    if i.cc == ARM_CC_AL:
+
+                        #get the offset address of indirect jump
+                        target_address = indirect_jump_w_lr(i, indirect_targets, entry_exit)
+
+                        if target_address == None:
+                            replay_stop = True
+                            break
+
+                        #update next instruction address with operand
+                        taken = True
+                        break                          
+
+                    #conditional indirect branch with link register
+                    else:
+                        #check condition
+                        branch_decision = AMI_check_condition(i, opts, trace)
+                        if(branch_decision):
+                             #get the offset address of indirect jump
+                            target_address = indirect_jump_w_lr(i, indirect_targets, entry_exit)
+
+                            if target_address == None:
+                                replay_stop = True
+                                break
+
+                            #update next instruction address with operand
+                            taken = True
+                            break                          
+ 
+                        else:
+                            #case4: branch not taken
+                            pass
+
+                #return instruction pop pc
+                elif(i.id == ARM_INS_POP):
+
+                    #jinwen add this for debug
+                    continue
+
+                    # print("ARM_INS_POP" + i.op_str)
+                    # op_cnt = i.op_count(ARM_OP_REG)
+                    for op in i.operands:
+                        if(op.reg == ARM_REG_PC):
+                            target_address = stack.pop()
+                            #return address external invocation
+                            if(target_address == -1):
+                                target_address = entry_exit.next_entry_exit()[1]
+                            taken = True
+                            break
+                            #pop return address from stack                    
+
+                if i.address >= opts.text_end:
+                    break
+
+                #unsure about what's the next instruction to be traversed (contineous or jump)
+                if taken:
+                    break
+            # print("=========================block=========================")
+
+            #decide the next instruction to be traversed
+            #go to the target of jump instruction
+            if taken:
+                current_address = target_address
+            #go to the next instruction
+            else:
+                current_address = (i.address if i.address > current_address
+                                         else current_address + 4)
+            #replay ending conditions
+            #jinwenTODO  this should be modified, using transfer record as condition
+            if (current_address >= opts.text_end or
+                current_address >= opts.load_address + mm.size()):
+                break
+
+            try:
+                # move the position of cursor in current bianry to the next traverse start point
+                mm.seek(current_address - opts.load_address)
+                # return the codes from the next traverse start point
+                code = mm.read(mm.size() - mm.tell())
+            except:
+                print ("current_address:0x%x, load_address:0x%x"%(current_address, opts.load_address))
+                break
+
+
+            #jinwenTODO not tested
+            #check if the last element in stack is -1 or the stack is empty
+            #continue traverse the cpt tsf measurement untile the cpt tsf measurement ends
+            # if ((len(stack) == 0) or (len(stack) == 1 and stack[0] == -1)):
+            #     print("finding new startttttttt\n")
+            #     current_address = find_next_crit_cpt(entry_exit,1)
+            #     #no more critical compartment, thus stop
+            #     if current_address == None:
+            #         break
+
+
+            if replay_stop == True:
+                print("*******************replay stop**************************")
+                # print("return hash:")
+                # print(ret_hash.hexdigest())
+                check_ret_integrity(opts.rt_hash_file)
+
+
+                break
+
+    print("total instructions: " + str(total_cnt));
+
+    return
+
+def hexbytes(insn):
+    width = int(pow(2, math.ceil(math.log(len(insn))/math.log(2))))
+    return "0x" + binascii.hexlify(bytearray(insn)).zfill(width)
+
+def get_current_pc(i):
+    return i.address
+
+def get_target_offset(current_pc, target):
+    return (target - current_pc) / 4  # pc relative offset of target
+
+def get_target_address(current_pc, offset):
+    return (offset * 4) + current_pc # absolute address of pc relative offset
+
+def long_to_bytes(value, width=8, endian='big'):
+    s = binascii.unhexlify(('%%0%dx' % (width)) % ((value + (1 << width*4)) % (1 << width*4)))
+    return s[::-1] if endian == 'little' else s
+
+def bytes_to_long(data, endian='big'):
+    data = data[::-1] if endian == 'little' else data
+
+    if data[0] & 0x80 > 0:
+        return -bytes_to_long(bytearray(~d % 256 for d in data)) - 1
+
+    return int(str(data).encode('hex'), 16)
+
+def get_branch_target(i):
+    b = bitarray(endian="big")
+    b.frombytes(str(i.bytes))
+
+    return get_target_address(get_current_pc(i), bytes_to_long(bytearray(b[0:24].tobytes()), endian='little'))
+
+def get_tb_target(i):
+    b = bitarray(endian="big")
+    addr = bitarray(endian="big")
+    b.frombytes(str(i.bytes))
+    x = b[0:3]
+    y = b[8:16]
+    z = b[21:24]
+    if b[21] == True:
+        addr = bitarray('11', endian='big') + z + y + x 
+    else:
+        addr = bitarray('00', endian='big') + z + y + x 
+    newaddr = addr[8:16] + addr[0:8]
+    offset = bytes_to_long(bytearray(newaddr.tobytes()), endian='little')
+    return get_target_address(get_current_pc(i), offset)
+
+def get_cond_branch_target(i):
+    b = bitarray(endian="big")
+    addr = bitarray(endian="big")
+    b.frombytes(str(i.bytes))
+    x = b[0:3]
+    y = b[8:16]
+    z = b[16:24]
+    if b[23] == True:
+        addr = bitarray('11111', endian='big') + z + y + x 
+    else:
+        addr = bitarray('00000', endian='big') + z + y + x 
+    newaddr = addr[16:24] + addr[8:16] + addr[0:8]
+    offset = bytes_to_long(bytearray(newaddr.tobytes()), endian='little')
+    return get_target_address(get_current_pc(i), offset)
+
+def get_branch_link_target(i):
+    b = bitarray(endian="big")
+    addr = bitarray(endian="big")
+    b.frombytes(str(i.bytes))
+    x = b[0:3]
+    y = b[8:16]
+    z = b[16:24]
+    if b[23] == True:
+        addr = bitarray('11111', endian='big') + z + y + x 
+    else:
+        addr = bitarray('00000', endian='big') + z + y + x 
+    newaddr = addr[16:24] + addr[8:16] + addr[0:8]
+    offset = bytes_to_long(bytearray(newaddr.tobytes()), endian='little')
+    return get_target_address(get_current_pc(i), offset)
+
+def handle_branch(inst, opts, trace, last_ne_flag):
+    res = [False,0]
+    next_branch = 'e'
+    target_address = inst.operands[0].imm
+
+    if 'b.' in inst.mnemonic:		# handle b.cond
+        print("b.cond")
+        print("operands[0].imm 0x%s" % to_x(target_address))
+        print_insn_detail(inst)
+        next_branch = trace.next_branch()
+
+        flip_cond = True
+        if 'eq' in inst.mnemonic and last_ne_flag:
+            flip_cond = True
+        elif 'eq' in inst.mnemonic and last_ne_flag == False:
+            flip_cond = False 
+        elif 'ne' in inst.mnemonic and last_ne_flag:
+            flip_cond = False 
+        elif 'ne' in inst.mnemonic and last_ne_flag == False:
+            flip_cond = True
+        elif 'lt' in inst.mnemonic and last_ne_flag == True:
+            flip_cond = False
+        elif 'lt' in inst.mnemonic and last_ne_flag == False:
+            flip_cond = True
+        elif 'gt' in inst.mnemonic and last_ne_flag == True:
+            flip_cond = True
+        elif 'gt' in inst.mnemonic and last_ne_flag == False:
+            flip_cond = False 
+        else:
+            print ("can't decide!")
+
+        if flip_cond:
+            if next_branch == 'y':
+                next_branch = 'n'
+            elif next_branch == 'n':
+                next_branch = 'y'
+
+        if next_branch == 'y':
+            res[0] = True
+            res[1] = inst.operands[0].imm
+        elif next_branch == 'n':
+            pass
+        elif next_branch == 'e':
+            print ('[handle_branch]next_branch return error')
+            pass
+    else:
+        print("b ")
+        print("operands[0].imm 0x%s" % to_x(target_address))
+        if target_address < opts.text_end:
+            print_insn_detail(inst)
+            res[0] = True
+            res[1] = target_address
+        else:
+            print("[b][abnormal][outside of .fini]")
+            print_insn_detail(inst)
+
+    if target_address < opts.text_start:
+        print(("[b][plt] %s b hex target addr :" + hex(target_address)) % hex(inst.address))
+
+    return res
+
+def handle_branch_with_link_reg(inst, opts):
+    res = [False,0]
+    print("===============[blr]==================")
+    print_insn_detail(inst)
+
+    return res
+    
+def handle_branch_with_reg(inst, opts):
+    res = [False,0]
+    print("===============[br]==================")
+    print_insn_detail(inst)
+
+    return res
+
+def handle_ret(i, opts):
+    res = [False,0]
+    print("===============[ret]==================")
+    print_insn_detail(i)
+
+    return res
+
+def handle_cond_branch(i, opts, trace, flip_cond):
+    res = [False,0]
+    next_branch = 'e'
+    target_address = i.operands[0].imm
+    next_branch = trace.next_branch()
+    print_insn_detail(i)
+
+    if flip_cond:
+        if next_branch == 'y':
+            next_branch = 'n'
+        elif next_branch == 'n':
+            next_branch = 'y'
+
+    if next_branch == 'y':
+        res[0] = True
+        res[1] = i.operands[1].imm
+    elif next_branch == 'n':
+        pass
+    elif next_branch == 'e':
+        print ('[handle_branch]next_branch return error')
+        pass
+
+    return res
+
+def handle_cbz(i, opts, trace, last_ne_flag):
+    print("===============[cbz]==================")
+    if last_ne_flag:
+        return handle_cond_branch(i, opts, trace, True)
+    else:
+        return handle_cond_branch(i, opts, trace, False)
+
+def handle_cbnz(i, opts, trace, last_ne_flag):
+    print("===============[cbnz]==================")
+    if last_ne_flag:
+        return handle_cond_branch(i, opts, trace, False)
+    else:
+        return handle_cond_branch(i, opts, trace, True)
+
+def handle_tbz(i, opts, trace, last_ne_flag):
+    print("===============[tbz]==================")
+    if last_ne_flag:
+        return handle_cond_branch(i, opts, trace, True)
+    else:
+        return handle_cond_branch(i, opts, trace, False)
+
+def handle_tbnz(i, opts, trace, last_ne_flag):
+    print("===============[tbnz]==================")
+    if last_ne_flag:
+        return handle_cond_branch(i, opts, trace, False)
+    else:
+        return handle_cond_branch(i, opts, trace, True)
+    
+def is_attestation_start(i, opts):
+    #print("operands[0].imm 0x%s" % to_x(i.operands[0].imm))
+    #print("cfv_init: 0x%s" % hex(opts.cfv_init))
+    return hex(i.operands[0].imm) == hex(opts.cfv_init)
+
+def is_attestation_end(i, opts):
+    #print("operands[0].imm 0x%s" % to_x(i.operands[0].imm))
+    #print("cfv_quote: 0x%s" % hex(opts.cfv_quote))
+    return hex(i.operands[0].imm) == hex(opts.cfv_quote)
+
+def handle_branch_with_link(inst, opts):
+    res = [False,0]
+
+    target_addr = get_branch_target(inst)
+    hex_addr = hex(target_addr)
+    if (hex_addr == hex(opts.cfv_init) + 'L'):
+        print("hit bl cfv_init")
+    elif (hex_addr == hex(opts.cfv_quote) + 'L'):
+        print("hit bl cfv_quote")
+    else:
+        if target_addr < opts.text_start:
+            #print(("[plt] %s bl hex target addr :" + hex_addr) % hex(inst.address))
+            print("bl plt, skipped library call")
+            print_insn_detail(inst)
+        else:
+            print("bl func, internal call, take action")
+            print_insn_detail(inst)
+
+            res[0] = True
+            res[1] = target_addr
+
+    return res
+
+
+
+condition_mapping = {
+    ARM_CC_INVALID: "Invalid",
+    ARM_CC_EQ: "Equal",
+    ARM_CC_NE: "Not Equal",
+    ARM_CC_HS: "Unsigned higher or same",
+    ARM_CC_LO: "Unsigned lower",
+    ARM_CC_MI: "Negative",
+    ARM_CC_PL: "Positive or zero",
+    ARM_CC_VS: "Overflow",
+    ARM_CC_VC: "No overflow",
+    ARM_CC_HI: "Unsigned higher",
+    ARM_CC_LS: "Unsigned lower or same",
+    ARM_CC_GE: "Signed greater than or equal",
+    ARM_CC_LT: "Signed less than",
+    ARM_CC_GT: "Signed greater than",
+    ARM_CC_LE: "Signed less than or equal",
+    ARM_CC_AL: "Always",
+}
+
+def should_take_branch(cc, cpsr):
+    N = (cpsr & (1 << 31)) != 0
+    Z = (cpsr & (1 << 30)) != 0
+    C = (cpsr & (1 << 29)) != 0
+    V = (cpsr & (1 << 28)) != 0
+
+    if cc == ARM_CC_EQ: return Z
+    elif cc == ARM_CC_NE: return not Z
+    elif cc == ARM_CC_HS: return C
+    elif cc == ARM_CC_LO: return not C
+    elif cc == ARM_CC_MI: return N
+    elif cc == ARM_CC_PL: return not N
+    elif cc == ARM_CC_VS: return V
+    elif cc == ARM_CC_VC: return not V
+    elif cc == ARM_CC_HI: return C and not Z
+    elif cc == ARM_CC_LS: return not C or Z
+    elif cc == ARM_CC_GE: return N == V
+    elif cc == ARM_CC_LT: return N != V
+    elif cc == ARM_CC_GT: return not Z and N == V
+    elif cc == ARM_CC_LE: return Z or N != V
+    elif cc == ARM_CC_AL: return True
+    else: return False  # Invalid condition code
+
+
+def AMI_check_condition(inst, opts, trace):
+    
+    #get the condition
+    # curr_cond_str = condition_mapping.get(inst.cc, "Unknown")
+
+    # print(curr_cond_str)
+
+    # curr_cpsr = trace.next_branch()
+
+        # branch_decision = should_take_branch(inst.cc, curr_cpsr)
+
+    # print(branch_decision)
+
+    # return branch_decision
+
+
+    return int(trace.next_branch())
+
+
+    # return False
+    # res = False
+    
+    # next_branch = trace.next_branch()
+
+    # if next_branch == 'y':
+    #     res = True
+
+    # return res
+
+
+def AMI_getIndirectTgt(ind_tgt_log):
+    
+    # target_addr = -1
+    return ind_tgt_log.next_indi_target()
+
+
+def AMI_check_outside_compt(target_address, critical_start, critical_end):
+    
+    #This is for prototype
+    return False
+    
+    if(target_address < critical_start or target_address > critical_end):
+        return True
+    else:
+        return False
+
+
+
+# def AMI_prototype_continue():
+#     continue
+
+
+if __name__ == "__main__":
+    main()
+

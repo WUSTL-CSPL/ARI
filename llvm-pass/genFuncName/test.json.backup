@@ -1,0 +1,4249 @@
+{
+	"_GLOBAL__sub_I_GCS.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_Common.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_DeviceOp.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_DeviceOp.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_MAVLink.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_Param.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_Rally.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Rally.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_ServoRelay.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_ServoRelay.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_Signing.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_GCS_serial_control.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_serial_control.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_GLOBAL__sub_I_MAVLink_routing.cpp" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_Z12check_latlng8Location" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 ([3 x i32])*",
+			"Type" : "Function"
+		}
+	},
+	"_Z12check_latlngii" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (i32, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z12mav_var_type11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "i8 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z16comm_get_txspace17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "i16 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z16comm_send_buffer17mavlink_channel_tPKhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "void (i32, i8*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z17_mav_trim_payloadPKch" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (i8*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z18comm_get_available17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "i16 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z19mavlink_sha256_initP18mavlink_sha256_ctx" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_sha256.h",
+			"LLVM_Type" : "void (%struct.mavlink_sha256_ctx*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z19mavlink_sign_packetP17__mavlink_signingPhPKhhS3_hS3_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (%struct.__mavlink_signing*, i8*, i8*, i8, i8*, i8, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z21mavlink_get_crc_extraPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z21mavlink_sha256_updateP18mavlink_sha256_ctxPKvj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_sha256.h",
+			"LLVM_Type" : "void (%struct.mavlink_sha256_ctx*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z23mavlink_sha256_final_48P18mavlink_sha256_ctxPh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_sha256.h",
+			"LLVM_Type" : "void (%struct.mavlink_sha256_ctx*, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z23mavlink_signature_checkP17__mavlink_signingP25__mavlink_signing_streamsPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i1 (%struct.__mavlink_signing*, %struct.__mavlink_signing_streams*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z25mavlink_get_proto_versionh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i32 (i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z25mavlink_set_proto_versionhj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (i8, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z26mavlink_get_channel_bufferh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "%struct.__mavlink_message* (i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z31mavlink_expected_message_lengthPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z31mavlink_finalize_message_bufferP17__mavlink_messagehhP16__mavlink_statushhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i16 (%struct.__mavlink_message*, i8, i8, %struct.__mavlink_status*, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_Z3gcsv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "%class.GCS* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_Z8is_equalIffENSt9enable_ifIXsr3std17is_floating_pointINSt11common_typeIJT_T0_EE4typeEEE5valueEbE4typeES2_S3_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL13crc_calculatePKht" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/checksum.h",
+			"LLVM_Type" : "i16 (i8*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL13valid_channel17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.h",
+			"LLVM_Type" : "i1 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL13valid_channel17mavlink_channel_t.50" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.h",
+			"LLVM_Type" : "i1 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL14crc_accumulatehPt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/checksum.h",
+			"LLVM_Type" : "void (i8, i16*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL16_mav_parse_errorP16__mavlink_status" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (%struct.__mavlink_status*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL16mav_array_memcpyPvPKvj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../icarous/../protocol.h",
+			"LLVM_Type" : "void (i8*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL16mav_array_memcpyPvPKvj.16" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../icarous/../protocol.h",
+			"LLVM_Type" : "void (i8*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL16mav_array_memcpyPvPKvj.49" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../icarous/../protocol.h",
+			"LLVM_Type" : "void (i8*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL19mavlink_sha256_calcP18mavlink_sha256_ctxPj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_sha256.h",
+			"LLVM_Type" : "void (%struct.mavlink_sha256_ctx*, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL21crc_accumulate_bufferPtPKct" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/checksum.h",
+			"LLVM_Type" : "void (i16*, i8*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL21mavlink_msg_ahrs_send17mavlink_channel_tfffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_ahrs.h",
+			"LLVM_Type" : "void (i32, float, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL22mavlink_msg_ahrs2_send17mavlink_channel_tffffii" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_ahrs2.h",
+			"LLVM_Type" : "void (i32, float, float, float, float, i32, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL22mavlink_msg_ahrs3_send17mavlink_channel_tffffiiffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_ahrs3.h",
+			"LLVM_Type" : "void (i32, float, float, float, float, i32, i32, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL24accept_unsigned_callbackPK16__mavlink_statusj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "i1 (%struct.__mavlink_status*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL24mavlink_msg_meminfo_send17mavlink_channel_tttj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_meminfo.h",
+			"LLVM_Type" : "void (i32, i16, i16, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL24mavlink_msg_radio_decodePK17__mavlink_messageP17__mavlink_radio_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_radio.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_radio_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL24mavlink_msg_raw_imu_send17mavlink_channel_tysssssssss" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_raw_imu.h",
+			"LLVM_Type" : "void (i32, i64, i16, i16, i16, i16, i16, i16, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL24mavlink_msg_vfr_hud_send17mavlink_channel_tffstff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_vfr_hud.h",
+			"LLVM_Type" : "void (i32, float, float, i16, i16, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL25mavlink_msg_attitude_send17mavlink_channel_tjffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_attitude.h",
+			"LLVM_Type" : "void (i32, i32, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL25mavlink_msg_battery2_send17mavlink_channel_tts" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_battery2.h",
+			"LLVM_Type" : "void (i32, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL25mavlink_msg_hwstatus_send17mavlink_channel_tth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_hwstatus.h",
+			"LLVM_Type" : "void (i32, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL25mavlink_msg_timesync_send17mavlink_channel_txx" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_timesync.h",
+			"LLVM_Type" : "void (i32, i64, i64)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL26mavlink_msg_collision_send17mavlink_channel_thjhhfff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_collision.h",
+			"LLVM_Type" : "void (i32, i8, i32, i8, i8, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL26mavlink_msg_heartbeat_send17mavlink_channel_thhhjh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_heartbeat.h",
+			"LLVM_Type" : "void (i32, i8, i8, i8, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL26mavlink_msg_vibration_send17mavlink_channel_tyfffjjj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_vibration.h",
+			"LLVM_Type" : "void (i32, i64, float, float, float, i32, i32, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL27mavlink_msg_set_mode_decodePK17__mavlink_messageP20__mavlink_set_mode_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_set_mode.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_set_mode_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL27mavlink_msg_statustext_send17mavlink_channel_thPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_statustext.h",
+			"LLVM_Type" : "void (i32, i8, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL27mavlink_msg_timesync_decodePK17__mavlink_messageP20__mavlink_timesync_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_timesync.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_timesync_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_mission_ack_send17mavlink_channel_thhhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_ack.h",
+			"LLVM_Type" : "void (i32, i8, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_param_set_decodePK17__mavlink_messageP21__mavlink_param_set_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_param_set.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_param_set_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_param_value_send17mavlink_channel_tPKcfhtt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_param_value.h",
+			"LLVM_Type" : "void (i32, i8*, float, i8, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_rangefinder_send17mavlink_channel_tff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_rangefinder.h",
+			"LLVM_Type" : "void (i32, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_rc_channels_send17mavlink_channel_tjhtttttttttttttttttth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_rc_channels.h",
+			"LLVM_Type" : "void (i32, i32, i8, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_scaled_imu2_send17mavlink_channel_tjsssssssss" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_scaled_imu2.h",
+			"LLVM_Type" : "void (i32, i32, i16, i16, i16, i16, i16, i16, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_scaled_imu3_send17mavlink_channel_tjsssssssss" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_scaled_imu3.h",
+			"LLVM_Type" : "void (i32, i32, i16, i16, i16, i16, i16, i16, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL28mavlink_msg_system_time_send17mavlink_channel_tyj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_system_time.h",
+			"LLVM_Type" : "void (i32, i64, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL29mavlink_msg_command_long_send17mavlink_channel_thhthfffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_command_long.h",
+			"LLVM_Type" : "void (i32, i8, i8, i16, i8, float, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL29mavlink_msg_optical_flow_send17mavlink_channel_tyhssffhfff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_optical_flow.h",
+			"LLVM_Type" : "void (i32, i64, i8, i16, i16, float, float, i8, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL29mavlink_msg_power_status_send17mavlink_channel_tttt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_power_status.h",
+			"LLVM_Type" : "void (i32, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL29mavlink_msg_statustext_decodePK17__mavlink_messageP22__mavlink_statustext_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_statustext.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_statustext_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL30mavlink_msg_heartbeat_get_typePK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_heartbeat.h",
+			"LLVM_Type" : "i8 (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL30mavlink_msg_home_position_send17mavlink_channel_tiiifffPKffffy" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_home_position.h",
+			"LLVM_Type" : "void (i32, i32, i32, i32, float, float, float, float*, float, float, float, i64)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL30mavlink_msg_mission_count_send17mavlink_channel_thhth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_count.h",
+			"LLVM_Type" : "void (i32, i8, i8, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL30mavlink_msg_rally_point_decodePK17__mavlink_messageP23__mavlink_rally_point_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_rally_point.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_rally_point_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL30mavlink_msg_system_time_decodePK17__mavlink_messageP23__mavlink_system_time_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_system_time.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_system_time_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL31mavlink_msg_battery_status_send17mavlink_channel_thhhsPKtsiiaih" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_battery_status.h",
+			"LLVM_Type" : "void (i32, i8, i8, i8, i16, i16*, i16, i32, i32, i8, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL31mavlink_msg_mission_item_decodePK17__mavlink_messageP24__mavlink_mission_item_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_item.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_item_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL31mavlink_msg_sensor_offsets_send17mavlink_channel_tsssfiiffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_sensor_offsets.h",
+			"LLVM_Type" : "void (i32, i16, i16, i16, float, i32, i32, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_att_pos_mocap_decodePK17__mavlink_messageP25__mavlink_att_pos_mocap_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_att_pos_mocap.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_att_pos_mocap_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_command_ack_send_bufP17__mavlink_message17mavlink_channel_tth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_command_ack.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, i32, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_distance_sensor_send17mavlink_channel_tjttthhhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_distance_sensor.h",
+			"LLVM_Type" : "void (i32, i32, i16, i16, i16, i8, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_mission_ack_send_bufP17__mavlink_message17mavlink_channel_thhhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_ack.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, i32, i8, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_mission_count_decodePK17__mavlink_messageP25__mavlink_mission_count_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_count.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_request_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_mission_current_send17mavlink_channel_tt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_current.h",
+			"LLVM_Type" : "void (i32, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_mission_request_send17mavlink_channel_thhth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_request.h",
+			"LLVM_Type" : "void (i32, i8, i8, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_rally_point_send_bufP17__mavlink_message17mavlink_channel_thhhhiissth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_rally_point.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, i32, i8, i8, i8, i8, i32, i32, i16, i16, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_rc_channels_raw_send17mavlink_channel_tjhtttttttth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_rc_channels_raw.h",
+			"LLVM_Type" : "void (i32, i32, i8, i16, i16, i16, i16, i16, i16, i16, i16, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_scaled_pressure_send17mavlink_channel_tjffs" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_scaled_pressure.h",
+			"LLVM_Type" : "void (i32, i32, float, float, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL32mavlink_msg_setup_signing_decodePK17__mavlink_messageP25__mavlink_setup_signing_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_setup_signing.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_setup_signing_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL33mavlink_msg_device_op_read_decodePK17__mavlink_messageP26__mavlink_device_op_read_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_device_op_read.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_device_op_read_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL33mavlink_msg_scaled_pressure2_send17mavlink_channel_tjffs" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_scaled_pressure2.h",
+			"LLVM_Type" : "void (i32, i32, float, float, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL33mavlink_msg_scaled_pressure3_send17mavlink_channel_tjffs" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_scaled_pressure3.h",
+			"LLVM_Type" : "void (i32, i32, float, float, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL33mavlink_msg_serial_control_decodePK17__mavlink_messageP26__mavlink_serial_control_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_serial_control.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_serial_control_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL33mavlink_msg_servo_output_raw_send17mavlink_channel_tjhtttttttttttttttt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_servo_output_raw.h",
+			"LLVM_Type" : "void (i32, i32, i8, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL34mavlink_msg_autopilot_version_send17mavlink_channel_tyjjjjPKhS1_S1_ttyS1_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_autopilot_version.h",
+			"LLVM_Type" : "void (i32, i64, i32, i32, i32, i32, i8*, i8*, i8*, i16, i16, i64, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL34mavlink_msg_device_op_write_decodePK17__mavlink_messageP27__mavlink_device_op_write_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_device_op_write.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_device_op_write_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL34mavlink_msg_gps_global_origin_send17mavlink_channel_tiiiy" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_gps_global_origin.h",
+			"LLVM_Type" : "void (i32, i32, i32, i32, i64)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL34mavlink_msg_mission_request_decodePK17__mavlink_messageP27__mavlink_mission_request_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_request.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_request_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL34mavlink_msg_named_value_float_send17mavlink_channel_tjPKcf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_named_value_float.h",
+			"LLVM_Type" : "void (i32, i32, i8*, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL35mavlink_msg_local_position_ned_send17mavlink_channel_tjffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_local_position_ned.h",
+			"LLVM_Type" : "void (i32, i32, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL35mavlink_msg_mission_item_int_decodePK17__mavlink_messageP28__mavlink_mission_item_int_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_item_int.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_item_int_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL36mavlink_msg_global_position_int_send17mavlink_channel_tjiiiissst" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_global_position_int.h",
+			"LLVM_Type" : "void (i32, i32, i32, i32, i32, i32, i16, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL36mavlink_msg_mission_clear_all_decodePK17__mavlink_messageP29__mavlink_mission_clear_all_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_clear_all.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %\"class.CompassCalibrator::AttitudeSample\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL36mavlink_msg_rally_fetch_point_decodePK17__mavlink_messageP29__mavlink_rally_fetch_point_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_rally_fetch_point.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %\"class.CompassCalibrator::AttitudeSample\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL37mavlink_msg_device_op_read_reply_send17mavlink_channel_tjhhhPKh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_device_op_read_reply.h",
+			"LLVM_Type" : "void (i32, i32, i8, i8, i8, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL37mavlink_msg_mission_item_reached_send17mavlink_channel_tt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_item_reached.h",
+			"LLVM_Type" : "void (i32, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL37mavlink_msg_param_request_list_decodePK17__mavlink_messageP30__mavlink_param_request_list_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_param_request_list.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_param_request_list_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL37mavlink_msg_param_request_read_decodePK17__mavlink_messageP30__mavlink_param_request_read_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_param_request_read.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_param_request_read_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL38mavlink_msg_device_op_write_reply_send17mavlink_channel_tjh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/./mavlink_msg_device_op_write_reply.h",
+			"LLVM_Type" : "void (i32, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL38mavlink_msg_mission_request_int_decodePK17__mavlink_messageP31__mavlink_mission_request_int_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_request_int.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_request_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL38mavlink_msg_mission_set_current_decodePK17__mavlink_messageP31__mavlink_mission_set_current_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_set_current.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_set_current_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL38mavlink_msg_request_data_stream_decodePK17__mavlink_messageP31__mavlink_request_data_stream_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_request_data_stream.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_request_data_stream_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL39mavlink_msg_mission_request_list_decodePK17__mavlink_messageP32__mavlink_mission_request_list_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_request_list.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %\"class.CompassCalibrator::AttitudeSample\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL40mavlink_msg_set_gps_global_origin_decodePK17__mavlink_messageP33__mavlink_set_gps_global_origin_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_set_gps_global_origin.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_set_gps_global_origin_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL42mavlink_msg_vicon_position_estimate_decodePK17__mavlink_messageP35__mavlink_vicon_position_estimate_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_vicon_position_estimate.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_vision_position_estimate_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL43mavlink_msg_vision_position_estimate_decodePK17__mavlink_messageP36__mavlink_vision_position_estimate_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_vision_position_estimate.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_vision_position_estimate_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL45mavlink_msg_mission_write_partial_list_decodePK17__mavlink_messageP38__mavlink_mission_write_partial_list_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_mission_write_partial_list.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_mission_write_partial_list_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL50mavlink_msg_global_vision_position_estimate_decodePK17__mavlink_messageP43__mavlink_global_vision_position_estimate_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/ardupilotmega/../common/./mavlink_msg_global_vision_position_estimate.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, %struct.__mavlink_vision_position_estimate_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZL8crc_initPt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/checksum.h",
+			"LLVM_Type" : "void (i16*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Gripper4grabEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Gripper*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Gripper7releaseEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Gripper*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission11replace_cmdEtRNS_15Mission_CommandE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Mission*, i16, %\"struct.AP_Mission::Mission_Command\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission15set_current_cmdEt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Mission*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission22mavlink_to_mission_cmdERK24__mavlink_mission_item_tRNS_15Mission_CommandE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__mavlink_mission_item_t*, %\"struct.AP_Mission::Mission_Command\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission22mission_cmd_to_mavlinkERKNS_15Mission_CommandER24__mavlink_mission_item_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%\"struct.AP_Mission::Mission_Command\"*, %struct.__mavlink_mission_item_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission26mavlink_int_to_mission_cmdERK28__mavlink_mission_item_int_tRNS_15Mission_CommandE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.__mavlink_mission_item_int_t*, %\"struct.AP_Mission::Mission_Command\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission26mission_cmd_to_mavlink_intERKNS_15Mission_CommandER28__mavlink_mission_item_int_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%\"struct.AP_Mission::Mission_Command\"*, %struct.__mavlink_mission_item_int_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission5clearEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Mission*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission7add_cmdERNS_15Mission_CommandE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Mission*, %\"struct.AP_Mission::Mission_Command\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10AP_Mission8truncateEt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Mission*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10ByteBuffer4readEPhj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.ByteBuffer*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10ByteBuffer5writeEPKhj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.ByteBuffer*, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10ByteBufferC1Ej" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.ByteBuffer* (%class.ByteBuffer*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10ByteBufferD1Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.ByteBuffer* (%class.ByteBuffer*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN10Quaternion10from_eulerEfff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.Quaternion*, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11AP_AccelCal13handleMessageEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_AccelCal*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11AP_AccelCal5startEP11GCS_MAVLINK" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_AccelCal*, %class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11AP_Airspeed9calibrateEb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Airspeed*, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK10send_ahrs2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK10send_textvE12MAV_SEVERITYPKcSt9__va_list" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i32, i8*, [1 x i32])*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK10setup_uartERK16AP_SerialManagerNS0_14SerialProtocolEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_SerialManager*, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK11send_bannerEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK12lock_channelE17mavlink_channel_tb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_MAVLink.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i32, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK12send_meminfoEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK12send_messageE10ap_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK12send_raw_imuEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK12send_vfr_hudEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK13accept_packetERK16__mavlink_statusR17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, %struct.__mavlink_status*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK13send_battery2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK13send_hwstatusEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK13send_radio_inEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK13send_timesyncEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14handle_rc_bindERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14packetReceivedERK16__mavlink_statusR17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_status*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14param_io_timerEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14retry_deferredEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14set_ekf_originERK8Location" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.Location*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK14stream_triggerENS_7streamsE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK15calibrate_gyrosEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK15handle_set_modeEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK15handle_timesyncEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16_set_mode_commonE8MAV_MODEj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, i32, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16data_stream_sendEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16handle_param_setEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16load_signing_keyEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16send_opticalflowERK11OpticalFlow" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.OpticalFlow*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16send_system_timeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16signing_key_loadER10SigningKey" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "i1 (%struct.SigningKey*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16signing_key_saveERK10SigningKey" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "i1 (%struct.SigningKey*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK16try_send_messageE10ap_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK17handle_statustextEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK17have_flow_controlEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK17queued_param_sendEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK17send_power_statusEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK18handle_command_ackEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK18handle_data_packetEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK18handle_rally_pointEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Rally.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK18send_collision_allERKN12AP_Avoidance8ObstacleE20MAV_COLLISION_ACTION" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%\"class.AP_Avoidance::Obstacle\"*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK19active_channel_maskEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i8 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK19handle_mission_itemEP17__mavlink_messageR10AP_Mission" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, %struct.__mavlink_message*, %class.AP_Mission*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK19handle_radio_statusEP17__mavlink_messageR15DataFlash_Classb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*, %class.DataFlash_Class*, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK19send_sensor_offsetsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20handle_att_pos_mocapEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20handle_mission_countER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20handle_setup_signingEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20packet_overhead_chanE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "i8 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20queued_waypoint_sendEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20send_parameter_replyEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK20send_scaled_pressureEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21handle_command_cameraERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21handle_common_messageEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21handle_device_op_readEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_DeviceOp.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21handle_serial_controlEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_serial_control.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21send_scaled_pressure3Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK21send_servo_output_rawEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22handle_command_mag_calERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22handle_device_op_writeEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_DeviceOp.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22handle_mission_requestER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22push_deferred_messagesEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22save_signing_timestampEb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "void (i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22send_queued_parametersEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK22streaming_channel_maskEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i8 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK23handle_preflight_rebootERK24__mavlink_command_long_tb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24handle_mission_clear_allER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24handle_rally_fetch_pointEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Rally.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24send_global_position_intEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24try_send_compass_messageE10ap_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24try_send_mission_messageE10ap_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK24update_signing_timestampEy" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "void (i64)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK25handle_command_do_gripperER24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK25handle_flight_terminationERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK25handle_param_request_listEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK25handle_param_request_readEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK25handle_servorelay_messageER24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_ServoRelay.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK26handle_command_do_set_modeERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK26handle_mission_set_currentER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK26handle_request_data_streamEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK26handle_system_time_messageEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK27handle_command_long_messageER24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK27handle_common_param_messageEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK27handle_common_rally_messageEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Rally.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK27handle_mission_request_listER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK28handle_set_gps_global_originEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK28handle_vision_position_deltaEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK29handle_command_do_send_bannerERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK29handle_common_mission_messageEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK29handle_send_autopilot_versionEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK30adjust_rate_for_stream_triggerENS_7streamsE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "float (%class.GCS_MAVLINK*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK30handle_vicon_position_estimateEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK30send_accelcal_vehicle_positionEj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK31handle_command_flash_bootloaderERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK31handle_vision_position_estimateEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK31send_position_target_global_intEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK32handle_command_get_home_positionERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK33handle_mission_write_partial_listER10AP_MissionP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mission*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK33log_vision_position_estimate_dataEyffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i64, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK36handle_command_preflight_calibrationERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK37_handle_command_preflight_calibrationERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK37correct_offboard_timestamp_usec_to_msEyt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, i64, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK38handle_global_vision_position_estimateEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK42_handle_command_preflight_calibration_baroEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK43handle_command_preflight_set_sensor_offsetsERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK43handle_common_vision_position_estimate_dataEyfffffft" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i64, float, float, float, float, float, float, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK45handle_command_request_autopilot_capabilitiesERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK4initEPN6AP_HAL10UARTDriverE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %\"class.AP_HAL::UARTDriver\"*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK6updateEj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK9send_ahrsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINK9send_textE12MAV_SEVERITYPKcz" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i32, i8*, ...)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINKC2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "%class.GCS_MAVLINK* (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINKUt0_C2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "%struct.anon.1* (%struct.anon.1*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11GCS_MAVLINKUt_C2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "%struct.anon* (%struct.anon*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11RC_Channels12get_radio_inEPth" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8 (i16*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11RC_Channels13receiver_bindEi" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN11RC_Channels23get_valid_channel_countEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN12SRV_Channels11srv_channelEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/SRV_Channel/SRV_Channel.h",
+			"LLVM_Type" : "%class.SRV_Channel* (i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN13AP_VisualOdom10handle_msgEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_VisualOdom*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN13StorageAccessC1EN14StorageManager11StorageTypeE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.StorageAccess* (%class.StorageAccess*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN14AP_Frsky_Telem13queue_messageE12MAV_SEVERITYPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Frsky_Telem*, i32, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class15Log_Write_RadioERK17__mavlink_radio_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, %struct.__mavlink_radio_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class15handle_log_sendEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class17Log_Write_MessageEPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class18handle_mavlink_msgER11GCS_MAVLINKP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, %class.GCS_MAVLINK*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class19Log_Write_ParameterEPKcf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, i8*, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class23Log_Write_EntireMissionERK10AP_Mission" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, %class.AP_Mission*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15DataFlash_Class9Log_WriteEPKcS1_S1_S1_S1_z" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.DataFlash_Class*, i8*, i8*, i8*, i8*, i8*, ...)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing11get_targetsEPK17__mavlink_messageRsS3_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "void (%class.MAVLink_routing*, %struct.__mavlink_message*, i16*, i16*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing11learn_routeE17mavlink_channel_tPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "void (%class.MAVLink_routing*, i32, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing15find_by_mavtypeEhRhS0_R17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "i1 (%class.MAVLink_routing*, i8, i8*, i8*, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing16handle_heartbeatE17mavlink_channel_tPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "void (%class.MAVLink_routing*, i32, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing17check_and_forwardE17mavlink_channel_tPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "i1 (%class.MAVLink_routing*, i32, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routing18send_to_componentsEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "void (%class.MAVLink_routing*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN15MAVLink_routingC2Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/MAVLink_routing.cpp",
+			"LLVM_Type" : "%class.MAVLink_routing* (%class.MAVLink_routing*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN17AP_InertialSensor14calibrate_trimERfS0_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_InertialSensor*, float*, float*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN17AP_InertialSensor16simple_accel_calEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_InertialSensor*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN17AP_InertialSensor9acal_initEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_InertialSensor*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN17AP_InertialSensor9init_gyroEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_InertialSensor*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN19AP_AdvancedFailsafe13gcs_terminateEbPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_AdvancedFailsafe*, i1, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN19AP_ServoRelayEvents12do_set_relayEhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_ServoRelayEvents*, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN19AP_ServoRelayEvents12do_set_servoEht" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_ServoRelayEvents*, i8, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN19AP_ServoRelayEvents15do_repeat_relayEhsj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_ServoRelayEvents*, i8, i16, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN19AP_ServoRelayEvents15do_repeat_servoEhtst" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_ServoRelayEvents*, i8, i16, i16, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP11ahrs_navekfEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_AHRS_NavEKF* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP16servorelayeventsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_ServoRelayEvents* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP3gpsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_GPS* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP3insEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_InertialSensor* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP3rtcEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_RTC* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP4ahrsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_AHRS* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP4baroEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Baro* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP4rssiEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_RSSI* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP4sitlEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%\"class.SITL::SITL\"* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP7batteryEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_BattMonitor* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP7compassEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.Compass* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP7gripperEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Gripper* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN2AP9fwversionEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_FWVersion* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS10send_textvE12MAV_SEVERITYPKcSt9__va_list" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i32, i8*, [1 x i32])*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS11setup_uartsER16AP_SerialManager" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*, %class.AP_SerialManager*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS12send_messageE10ap_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS14retry_deferredEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS15send_statustextE12MAV_SEVERITYhPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i32, i8, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS15set_out_of_timeEb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "void (%class.GCS*, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS16data_stream_sendEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS18service_statustextEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS20send_parameter_valueEPKc11ap_var_typef" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Param.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i8*, i32, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS28install_alternative_protocolE17mavlink_channel_t7FunctorIbJhPN6AP_HAL10UARTDriverEEE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "i1 (%class.GCS*, i32, [2 x i32])*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS33send_mission_item_reached_messageEt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS6updateEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS8instanceEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "%class.GCS* ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN3GCS9send_textE12MAV_SEVERITYPKcz" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i32, i8*, ...)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN4SITL4SITL13simstate_sendE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%\"class.SITL::SITL\"*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_GPS10handle_msgEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_GPS*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_GPS20send_mavlink_gps_rawE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_GPS*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_GPS20send_mavlink_gps_rtkE17mavlink_channel_th" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_GPS*, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_GPS21send_mavlink_gps2_rawE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_GPS*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_GPS9lock_portEhb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_GPS*, i8, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL4Util8snprintfEPcjPKcz" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%\"class.AP_HAL::Util\"*, i8*, i32, i8*, ...)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL4Util9vsnprintfEPcjPKcSt9__va_list" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%\"class.AP_HAL::Util\"*, i8*, i32, i8*, [1 x i32])*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL5panicEPKcz" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i8*, ...)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL6Device20set_checked_registerEhh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%\"class.AP_HAL::Device\"*, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL6microsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_HAL8micros64Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i64 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN6AP_RTC12set_utc_usecEyNS_11source_typeE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_RTC*, i64, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7AP_AHRS25Log_Write_Home_And_OriginEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_AHRS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7AP_Baro18update_calibrationEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Baro*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7AP_RSSI24read_receiver_rssi_uint8Ev" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i8 (%class.AP_RSSI*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7Compass19send_mag_cal_reportE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.Compass*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7Compass20set_and_save_offsetsEhRK7Vector3IfE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.Compass*, i8, %class.Vector3*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7Compass21send_mag_cal_progressE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.Compass*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN7Compass22handle_mag_cal_commandERK24__mavlink_command_long_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.Compass*, %struct.__mavlink_command_long_t*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Mount20handle_gimbal_reportE17mavlink_channel_tP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Mount*, i32, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param11next_scalarEPNS_10ParamTokenEP11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Param* (%\"struct.std::__atomic_base\"*, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param13find_by_indexEtP11ap_var_typePNS_10ParamTokenE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Param* (i16, i32*, %\"struct.std::__atomic_base\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param16count_parametersEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i16 ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param4findEPKcP11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Param* (i8*, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param4saveEb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Param*, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param5firstEPNS_10ParamTokenEP11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_Param* (%\"struct.std::__atomic_base\"*, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param9erase_allEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Param9set_floatEf11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Param*, float, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN8AP_Rally26set_rally_point_with_indexEhRK13RallyLocation" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Rally*, i8, %struct.RallyLocation*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Camera11control_msgEPK17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Camera*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Camera13send_feedbackE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Camera*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Camera7controlEffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Camera*, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Camera9configureEfffffff" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Camera*, float, float, float, float, float, float, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Notify16handle_play_tuneEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Notify18handle_led_controlEP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZN9AP_Notify9send_textEPKc" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Notify*, i8*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10AP_Mission16num_commands_maxEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i16 (%class.AP_Mission*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10AP_Mission21read_cmd_from_storageEtRNS_15Mission_CommandE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Mission*, i16, %\"struct.AP_Mission::Mission_Command\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10ByteBuffer5emptyEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.ByteBuffer*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10ByteBuffer5spaceEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.ByteBuffer*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10ByteBuffer9availableEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.ByteBuffer*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK10Quaternion8to_eulerERfS0_S0_" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.Quaternion*, float*, float*, float*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK11in_hil_modeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK11vfr_hud_altEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "float (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK12params_readyEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK13send_attitudeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK13send_simstateEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK14send_heartbeatEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK14send_proximityEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK14send_vibrationEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK15get_visual_odomEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "%class.AP_VisualOdom* (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK15packet_overheadEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i8 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK15send_ekf_originEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK15signing_enabledEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Signing.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK16send_named_floatEPKcf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, i8*, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK16vfr_hud_airspeedEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "float (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK16vfr_hud_throttleEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i16 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK17telemetry_delayedEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK17vfr_hud_climbrateEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "float (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK19persist_streamratesEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK19send_battery_statusERK14AP_BattMonitorh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK19send_battery_statusEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK19send_local_positionEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK20handle_gimbal_reportER8AP_MountP17__mavlink_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_Mount*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK20send_distance_sensorEPK22AP_RangeFinder_Backendh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*, %class.AP_RangeFinder_Backend*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK20send_distance_sensorEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i1 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK21get_advanced_failsafeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "%class.AP_AdvancedFailsafe* (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK21timesync_timestamp_nsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i64 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK22send_autopilot_versionEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK23global_position_int_altEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK25send_rangefinder_downwardEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK29timesync_receive_timestamp_nsEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i64 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK32global_position_int_relative_altEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : true,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK8get_chanEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i32 (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11GCS_MAVLINK9send_homeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS_Common.cpp",
+			"LLVM_Type" : "void (%class.GCS_MAVLINK*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11RangeFinder11get_backendEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_RangeFinder_Backend* (%class.RangeFinder*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11RangeFinder13find_instanceE8Rotation" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.AP_RangeFinder_Backend* (%class.RangeFinder*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK11SRV_Channel14get_output_pwmEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/SRV_Channel/SRV_Channel.h",
+			"LLVM_Type" : "i16 (%class.SRV_Channel*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity10get_statusEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_Proximity*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity12distance_maxEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_Proximity*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity12distance_minEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_Proximity*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity19get_upward_distanceERf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Proximity*, float*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity24get_horizontal_distancesERNS_24Proximity_Distance_ArrayE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Proximity*, %\"struct.AP_Proximity::Proximity_Distance_Array\"*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK12AP_Proximity8get_typeEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_Proximity*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK13StorageAccess10read_blockEPvtj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.StorageAccess*, i8*, i16, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK13StorageAccess11write_blockEtPKvj" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.StorageAccess*, i16, i8*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK13StorageAccess4sizeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/StorageManager/StorageManager.h",
+			"LLVM_Type" : "i16 (%class.StorageAccess*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_AHRS_NavEKF22send_ekf_status_reportE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_AHRS_NavEKF*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor11consumed_whEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor11has_currentEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor12consumed_mahEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor12current_ampsEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor15get_temperatureERfh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_BattMonitor*, float*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor17get_cell_voltagesEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%\"struct.AP_BattMonitor::cells\"* (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor19has_consumed_energyEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK14AP_BattMonitor7voltageEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_BattMonitor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK16AP_SerialManager13find_baudrateENS_14SerialProtocolEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_SerialManager*, i32, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK16AP_SerialManager19get_mavlink_channelENS_14SerialProtocolEhR17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_SerialManager*, i32, i8, i32*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK16AP_SerialManager20get_mavlink_protocolE17mavlink_channel_t" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_SerialManager*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK17AP_InertialSensor20get_accel_clip_countEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%class.AP_InertialSensor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK17AP_InertialSensor20get_vibration_levelsEh" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "%class.Vector3 (%class.AP_InertialSensor*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK17AP_InertialSensor22gyro_calibrated_ok_allEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_InertialSensor*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK3GCS11out_of_timeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.h",
+			"LLVM_Type" : "i1 (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK3GCS15send_ekf_originEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK3GCS16send_named_floatEPKcf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void (%class.GCS*, i8*, float)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK3GCS9send_homeEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "../../libraries/GCS_MAVLink/GCS.cpp",
+			"LLVM_Type" : "void (%class.GCS*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK6AP_RTC12get_utc_usecERy" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_RTC*, i64*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK7Compass15get_declinationEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.Compass*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK7NavEKF214getEulerAnglesEaR7Vector3IfE" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.NavEKF2*, i8, %class.Vector3*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK7NavEKF26getLLHER8Location" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.NavEKF2*, %struct.Location*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK7Vector2IfE6lengthEv" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%struct.Vector2*)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK8AP_Param13cast_to_floatE11ap_var_type" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "float (%class.AP_Param*, i32)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK8AP_Param15copy_name_tokenERKNS_10ParamTokenEPcjb" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%class.AP_Param*, %\"struct.std::__atomic_base\"*, i8*, i32, i1)*",
+			"Type" : "Function"
+		}
+	},
+	"_ZNK8AP_Rally26get_rally_point_with_indexEhR13RallyLocation" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i1 (%class.AP_Rally*, i8, %struct.RallyLocation*)*",
+			"Type" : "Function"
+		}
+	},
+	"_mav_finalize_message_chan_send" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (i32, i32, i8*, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"_mavlink_resend_uart" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (i32, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"_mavlink_send_uart" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (i32, i8*, i16)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_finalize_message" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i16 (%struct.__mavlink_message*, i8, i8, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_finalize_message_chan" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i16 (%struct.__mavlink_message*, i8, i8, i8, i8, i8, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_frame_char" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (i8, i8, %struct.__mavlink_message*, %struct.__mavlink_status*)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_frame_char_buffer" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (%struct.__mavlink_message*, %struct.__mavlink_status*, i8, %struct.__mavlink_message*, %struct.__mavlink_status*)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_get_channel_status" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "%struct.__mavlink_status* (i8)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_get_msg_entry" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "%struct.__mavlink_msg_entry* (i32)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_msg_to_send_buffer" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i16 (i8*, %struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_parse_char" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (i8, i8, %struct.__mavlink_message*, %struct.__mavlink_status*)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_reset_channel_status" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (i8)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_start_checksum" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*)*",
+			"Type" : "Function"
+		}
+	},
+	"mavlink_update_checksum" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "void (%struct.__mavlink_message*, i8)*",
+			"Type" : "Function"
+		}
+	},
+	"put_bitfield_n_by_index" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"Filename" : "libraries/GCS_MAVLink/include/mavlink/v2.0/mavlink_helpers.h",
+			"LLVM_Type" : "i8 (i32, i8, i8, i8, i8*, i8*)*",
+			"Type" : "Function"
+		}
+	}
+}

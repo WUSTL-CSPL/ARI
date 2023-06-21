@@ -1,0 +1,3 @@
+clang --target=arm-linux-gnueabihf -I/media/rpi/usr/include/arm-linux-gnueabihf -mfloat-abi=hard -O0 -g -gdwarf-5 -fverbose-asm -Wall -S -emit-llvm ../../trampoline_lib/trampoline_fw.S -o ../../trampoline_lib/trampoline_fw.bc
+
+/home/osboxes/Desktop/llvm/build/bin/llc -float-abi=hard ../../trampoline_lib/trampoline_fw.bc -o ../../trampoline_lib/trampoline_fw.bc_S

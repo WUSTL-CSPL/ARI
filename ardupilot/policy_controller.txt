@@ -1,0 +1,9 @@
+attitude controller: ArduCopter/Attitude.cpp
+velocity/position controller: ArduCopter/mode_guided.cpp
+fail-safe controller: ArduCopter/failsafe.cpp
+avoidance controller: libraries/AC_Avoidance
+landing controller: ArduCopter/mode_land.cpp
+takeoff control: ArduCopter/takeoff.cpp
+break control: ArduCopter/mode_brake.cpp
+drift control: ArduCopter/mode_drift.cpp
+hold control: ArduCopter/mode_althold.cpp

@@ -1,0 +1,6 @@
+[submodule "llvm_core_pass"]
+	path = llvm_core_pass
+	url = https://github.com/Ruide/llvm_core_pass.git
+[submodule "rt-tee"]
+	path = rt-tee
+	url = https://gitlab.com/shellb34r/rt-tee.git

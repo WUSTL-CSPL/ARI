@@ -1,0 +1,11 @@
+rm -rf ./util.bc ./bcm_gpio.bc ./alarm4pi.bc ./log_msgs.bc ./proc_helper.bc ./public_ip.bc ./pushover.bc ./gpio_polling.bc /after_compartment_test_combo.bc /after_comp_combo.s 
+
+
+make test-combo
+
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxAnaysis --hexbox-analysis-results=./analysis_result.json ./test_combo.bc > after_analyze_test_combo.bc
+
+python /home/osboxes/Desktop/conattest/graph_analysis/analyzer.py -j=/home/osboxes/Desktop/conattest/oat-evaluation/alarm4pi-cb/analysis_result.json -s=/home/osboxes/Desktop/conattest/oat-evaluation/alarm4pi-cb/size_result.json -o=/home/osboxes/Desktop/conattest/oat-evaluation/alarm4pi-cb/compartments_result.json -m=filename-no-opt -b=STM32F479 -T=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/arm_link_script_syringe.txt -L=/home/osboxes/Desktop/conattest/oat-evaluation/alarm4pi-cb/arm_link_script_syringe_intermidea.txt
+
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxApplication --hexbox-policy=./compartments_result.json ./test_combo.bc > after_compartment_test_combo.bc
+

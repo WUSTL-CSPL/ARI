@@ -1,0 +1,29 @@
+/home/osboxes/devel/optee/toolchains/aarch32/bin/arm-linux-gnueabihf-ld combo.s -plugin=/home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -g --plugin-opt=-float-abi=hard -lm -lrt --plugin-opt=-info-output-file=pdg-generate.stats -o pdg-generate -g --plugin-opt=-hexbox-analysis-results=llvm_pdg.json --plugin-opt=-hexbox-analysis-size=llvm_size.json -o syringe--baseline.elf	
+
+
+
+
+/home/osboxes/devel/optee/toolchains/aarch32/bin/arm-linux-gnueabihf-ld combo.s -g -L/home/osboxes/Desktop/llvm/build/bin/../lib -L//lib -L//usr/lib -lm -lrt -o syringe--baseline.elf
+
+
+python /home/wjw/Desktop/ACES//compiler/graph_analysis/analyzer.py -j=.build/hexbox/hexbox-analysis--filename-no-opt--mpu-8.json -s=.build/hexbox/hexbox-size--filename-no-opt--mpu-8.json \
+  -o=.build/hexbox/hexbox-policy--filename-no-opt--mpu-8.json -T=STM32F407VGTx_FLASH.ld -L=.build/hexbox/hexbox-intermediate--filename-no-opt--mpu-8.ld \
+  -m=filename-no-opt -b=STM32F479 -n=8
+
+
+python /home/osboxes/Desktop/conattest/graph_analysis/analyzer.py -j=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/analysis_result.json -s=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/size_result.json -o=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/compartments_result.json -m=filename-no-opt
+
+
+"Filename" : "syringePump.c",+
+
+
+/home/osboxes/devel/optee/toolchains/aarch32/bin/arm-linux-gnueabihf-ld combo.s --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -lgcc -lc --entry main -o syringe--baseline.elf
+
+
+rpi3:
+/usr/bin/arm-linux-gnueabihf-ld combo.s --sysroot=/ -L/usr/lib/gcc/arm-linux-gnueabihf/6.3.0 -L/usr/lib/arm-linux-gnueabihf/ -lgcc -lc --entry main -o syringe--baseline.elf
+
+
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxApplication --hexbox-policy=./compartments_result.json ./test_combo.bc >> after_compartment_test_combo.bc
+
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -lgcc -lc --entry main -o syringe--baseline_after_compt.elf

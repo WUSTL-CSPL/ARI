@@ -1,0 +1,1 @@
+scp pi@10.228.106.170:/home/pi/{ARI_branch.txt,ARI_ind_jmp.txt,ARI_ret_hash.txt,ARI_tsf.txt,dgb.txt} ./

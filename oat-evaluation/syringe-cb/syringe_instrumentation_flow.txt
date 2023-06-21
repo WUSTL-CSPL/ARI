@@ -1,0 +1,21 @@
+rm -rf ./util.bc ./LiquidCrystal.bc ./led.bc ./syringePump.bc ./test_combo.bc /home/osboxes/Desktop/conattest/trampoline_lib/ict_checking.bc /home/osboxes/Desktop/conattest/trampoline_lib/trampoline_fw.o ./after_compartment_test_combo.bc ./after_comp_combo_asm.s ./after_comp_combo.s ./after_compartment_test_combo.ll
+
+make test-combo
+
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxAnaysis --hexbox-analysis-results=./analysis_result.json ./test_combo.bc > after_analyze_test_combo.bc
+
+python /home/osboxes/Desktop/conattest/graph_analysis/analyzer.py -j=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/analysis_result.json -s=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/size_result.json -o=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/compartments_result.json -m=filename-no-opt -b=STM32F479 -T=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/arm_link_script_syringe.txt -L=/home/osboxes/Desktop/conattest/oat-evaluation/syringe-cb/arm_link_script_syringe_intermidea.txt
+
+opt -f -load /home/osboxes/Desktop/llvm/build/lib/LLVMgold.so -HexboxApplication --hexbox-policy=./compartments_result.json ./test_combo.bc > after_compartment_test_combo.bc
+
+make llvm-dis-comp
+
+make llc-comp
+
+/home/osboxes/devel/optee/toolchains/aarch32/arm-linux-gnueabihf/bin/ld -T ./arm_link_script_syringe_intermidea.txt after_comp_combo.s /home/osboxes/Desktop/conattest/trampoline_lib/trampoline_fw.o --sysroot=/ -L/usr/lib/gcc-cross/arm-linux-gnueabihf/5.4.0 -L/usr/arm-linux-gnueabihf/lib -lgcc -lc --entry main -o syringe--baseline_after_compt.elf  
+
+make llc-comp-asm
+
+/home/osboxes/devel/optee/toolchains/aarch32/bin/arm-linux-gnueabihf-objdump -D ./syringe--baseline_after_compt.elf > ./objdump_syringe.S
+
+scp ./syringe--baseline_after_compt.elf pi@192.168.0.111:~

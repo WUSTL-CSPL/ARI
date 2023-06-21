@@ -1,0 +1,517 @@
+{
+    "Compartments": {
+        ".CODE_REGION_1_": {
+            "Data": [
+                ".DATA_REGION_0_",
+                ".DATA_REGION_1_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_2_": {
+            "Data": [],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_3_": {
+            "Data": [
+                ".DATA_REGION_0_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_4_": {
+            "Data": [
+                ".DATA_REGION_0_",
+                ".DATA_REGION_4_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_5_": {
+            "Data": [
+                ".DATA_REGION_0_",
+                ".DATA_REGION_5_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_6_": {
+            "Data": [
+                ".DATA_REGION_0_",
+                ".DATA_REGION_6_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_7_": {
+            "Data": [
+                ".DATA_REGION_0_",
+                ".DATA_REGION_7_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_8_": {
+            "Data": [
+                ".DATA_REGION_8_",
+                ".DATA_REGION_0_"
+            ],
+            "Peripherals": [],
+            "Priv": false
+        },
+        ".CODE_REGION_9_": {
+            "Data": [],
+            "Peripherals": [],
+            "Priv": false
+        }
+    },
+    "MPU_CONFIG": {
+        ".CODE_REGION_1_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_2_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_3_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_4_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_5_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_6_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_7_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_8_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        ".CODE_REGION_9_": {
+            "Addrs": [
+                134217744,
+                536870929,
+                134742034,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "Attrs": [
+                100794405,
+                319160355,
+                100794387,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "__hexbox_default": {
+            "Addrs": null,
+            "Attrs": null
+        }
+    },
+    "NUM_MPU_REGIONS": 8,
+    "Regions": {
+        ".CODE_REGION_1_": {
+            "Align": 1,
+            "Objects": [
+                "update_ip_msg",
+                "init_polling",
+                "wait_polling_end",
+                "polling_thread",
+                "send_info_notif"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_2_": {
+            "Align": 1,
+            "Objects": [
+                "usecs"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_3_": {
+            "Align": 1,
+            "Objects": [
+                "hostname_to_ip_at_dns",
+                "resp_code_msg",
+                "herror_msg",
+                "get_public_ip",
+                "hostname_to_ip"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_4_": {
+            "Align": 1,
+            "Objects": [
+                "get_localtime_str",
+                "msg_printf",
+                "close_log_files",
+                "close_log_file",
+                "open_log_files",
+                "open_msg_file"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_5_": {
+            "Align": 1,
+            "Objects": [
+                "pushover_init",
+                "send_notification"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_6_": {
+            "Align": 1,
+            "Objects": [
+                "configure_gpios",
+                "export_gpios",
+                "GPIO_export",
+                "GPIO_write",
+                "unexport_gpios",
+                "GPIO_direction",
+                "GPIO_read",
+                "GPIO_unexport"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_7_": {
+            "Align": 1,
+            "Objects": [
+                "configure_timer",
+                "get_current_exec_path",
+                "run_background_command",
+                "daemonize",
+                "wait_processes",
+                "kill_processes"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_8_": {
+            "Align": 1,
+            "Objects": [
+                "main",
+                "timer_handler",
+                "set_signal_handler",
+                "exit_deamon_handler"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".CODE_REGION_9_": {
+            "Align": 1,
+            "Objects": [
+                "getaddrinfo",
+                "fclose",
+                "kill",
+                "fwrite",
+                "umask",
+                "setsid",
+                "localtime",
+                "dup2",
+                "read",
+                "inet_ntoa",
+                "fileno",
+                "perror",
+                "signal",
+                "waitpid",
+                "__res_nquery",
+                "strcpy",
+                "sleep",
+                "strcmp",
+                "strncmp",
+                "snprintf",
+                "strcat",
+                "syslog",
+                "freeaddrinfo",
+                "connect",
+                "fgets",
+                "close",
+                "flock",
+                "dirname",
+                "strchr",
+                "open",
+                "__h_errno_location",
+                "ftell",
+                "exit",
+                "free",
+                "sigaction",
+                "socket",
+                "ns_initparse",
+                "strftime",
+                "printf",
+                "fopen",
+                "usleep",
+                "fdopen",
+                "__isoc99_sscanf",
+                "fork",
+                "vprintf",
+                "gai_strerror",
+                "gettimeofday",
+                "atoi",
+                "vfprintf",
+                "chdir",
+                "__errno_location",
+                "strerror",
+                "execvp",
+                "malloc",
+                "fread",
+                "ns_sprintrr",
+                "fprintf",
+                "htons",
+                "feof",
+                "strlen",
+                "fseek",
+                "write",
+                "setenv",
+                "ns_parserr",
+                "ns_msg_getflag",
+                "__isoc99_fscanf",
+                "readlink",
+                "pthread_join",
+                "setbuf",
+                "setitimer",
+                "alarm",
+                "time",
+                "__res_ninit"
+            ],
+            "Size": 0,
+            "Type": "Code"
+        },
+        ".DATA_REGION_0_": {
+            "Align": 1,
+            "Objects": [
+                "Event_file_handle",
+                "Log_file_handle"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_1_": {
+            "Align": 1,
+            "Objects": [
+                "Polling_thread_id",
+                "Msg_info_str"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_4_": {
+            "Align": 1,
+            "Objects": [
+                "Console_messages"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_5_": {
+            "Align": 1,
+            "Objects": [
+                "Server_path",
+                "Server_port",
+                "Token_id",
+                "User_id",
+                "Server_name",
+                "Server_ip"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_6_": {
+            "Align": 1,
+            "Objects": [
+                "GPIO_write.s_values_str",
+                "GPIO_direction.s_directions_str"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_7_": {
+            "Align": 1,
+            "Objects": [
+                "stderr"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        },
+        ".DATA_REGION_8_": {
+            "Align": 1,
+            "Objects": [
+                "Web_server_exec_args",
+                "Child_process_id",
+                "timer_handler.count",
+                "Capture_exec_args",
+                "Exit_daemon_loop"
+            ],
+            "Size": 0,
+            "Type": "Data"
+        }
+    }
+}

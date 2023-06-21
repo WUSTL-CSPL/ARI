@@ -1,0 +1,6 @@
+llc -filetype=obj ./after_compartment_llvm_link.bc -o ./llvm-link_cond_br.o
+cd ../oat-evaluation/syringe-cb
+make trampoline
+make cit_checking_obj
+cd ../../ardupilot
+source ./single_bc_final_link.txt  && cd ./bin/ && scp ./arducopter pi@10.228.106.170:~ && cd ../../../

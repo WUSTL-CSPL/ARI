@@ -1,0 +1,28 @@
+digraph "" {
+".DATA_REGION_1_" [.DATA_REGION_=1, MERGE_KEY="LiquidCrystal.c", R_OBJECTS="[u'__func__.lcd_print', u'__func__.lcd_clear', u'__func__.lcd_setCursor', u'__func__.lcd_begin']", Type=".DATA_REGION_"];
+".CODE_REGION_2_" [.CODE_REGION_=3, MERGE_KEY="syringePump.c", R_OBJECTS="[u'bolus', u'processSerial', u'updateScreen', u'readSerial', u'get_key', u'main', u'doKeyAction', u'checkTriggers', u'setup', u'forward_target', u'readKey', u'loop']", Type=".CODE_REGION_"];
+".CODE_REGION_4_" [.CODE_REGION_=5, MERGE_KEY="util.c", R_OBJECTS="[u'Serial_begin', u'digitalWrite', u'analogRead', u'Serial_available', u'millis', u'usecs', u'digitalRead', u'toUInt', u'Serial_read', u'Serial_write', u'pinMode', u'delayMicroseconds']", Type=".CODE_REGION_"];
+".CODE_REGION_6_" [.CODE_REGION_=7, MERGE_KEY=other, R_OBJECTS="[u'printf', u'getchar', u'sprintf', u'usleep', u'__isoc99_scanf', u'atoi', u'gettimeofday']", Type=".CODE_REGION_"];
+".DATA_REGION_0_" [.DATA_REGION_=0, MERGE_KEY=share_data, R_OBJECTS="[u'global_data']", Type=".DATA_REGION_"];
+".DATA_REGION_4_" [.DATA_REGION_=4, MERGE_KEY="util.c", R_OBJECTS="[u'__func__.pinMode', u'__func__.digitalRead', u'__func__.Serial_write', u'__func__.Serial_available', u'__func__.Serial_begin']", Type=".DATA_REGION_"];
+".CODE_REGION_5_" [.CODE_REGION_=6, MERGE_KEY="led.c", R_OBJECTS="[u'led_off', u'led_on']", Type=".CODE_REGION_"];
+".DATA_REGION_5_" [.DATA_REGION_=5, MERGE_KEY="led.c", R_OBJECTS="[u'__func__.led_off', u'__func__.led_on']", Type=".DATA_REGION_"];
+".DATA_REGION_2_" [.DATA_REGION_=2, MERGE_KEY="syringePump.c", R_OBJECTS="[u'triggerPin', u'keyDebounce', u'bigTriggerPin', u'motorStepPin', u'mLBolusStep', u'motorDirPin', u'mLBolus', u'mLUsed', u'lcd', u'NUM_KEYS', u'mLBolusStepIdx', u'adc_key_val', u'serialStrReady', u'prevBigTrigger', u'prevTrigger', u'ustepsPerML', u'key', u'serialStr', u'mLBigBolus', u'serialStrLen', u'mLBolusSteps', u'prevKey', u'keyRepeatDelay', u'lastKeyRepeatAt', u'adc_key_in', u'uiState']", Type=".DATA_REGION_"];
+".CODE_REGION_1_" [.CODE_REGION_=2, MERGE_KEY="LiquidCrystal.c", R_OBJECTS="[u'lcd_setCursor', u'lcd_begin', u'lcd_clear', u'lcd_print']", Type=".CODE_REGION_"];
+".CODE_REGION_3_" [.CODE_REGION_=4, MERGE_KEY="/home/osboxes/Desktop/conattest/trampoline_lib/ict_checking.c", R_OBJECTS="[u'ict_checking', u'error_found']", Type=".CODE_REGION_"];
+".DATA_REGION_1_" -> ".CODE_REGION_1_";
+".CODE_REGION_2_" -> ".CODE_REGION_2_";
+".CODE_REGION_2_" -> ".CODE_REGION_4_";
+".CODE_REGION_2_" -> ".CODE_REGION_6_";
+".CODE_REGION_2_" -> ".CODE_REGION_5_";
+".CODE_REGION_2_" -> ".CODE_REGION_1_";
+".CODE_REGION_4_" -> ".CODE_REGION_6_";
+".DATA_REGION_0_" -> ".CODE_REGION_1_";
+".DATA_REGION_0_" -> ".CODE_REGION_5_";
+".DATA_REGION_4_" -> ".CODE_REGION_4_";
+".CODE_REGION_5_" -> ".CODE_REGION_6_";
+".DATA_REGION_5_" -> ".CODE_REGION_5_";
+".DATA_REGION_2_" -> ".CODE_REGION_2_";
+".CODE_REGION_1_" -> ".CODE_REGION_6_";
+".CODE_REGION_3_" -> ".CODE_REGION_6_";
+}

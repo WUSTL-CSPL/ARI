@@ -1,0 +1,1666 @@
+{
+	"NUM_KEYS" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"get_key" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"Serial_available" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"getchar" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"readSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"Serial_begin" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"Serial_read" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"getchar" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"readSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"Serial_write" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"processSerial" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"__func__.Serial_available" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"Serial_available" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.Serial_begin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"Serial_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.Serial_write" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"Serial_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.digitalRead" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"digitalRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.lcd_begin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"lcd_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.lcd_clear" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"lcd_clear" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.lcd_print" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"lcd_print" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.lcd_setCursor" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"lcd_setCursor" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.led_off" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"led_off" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.led_on" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"led_on" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__func__.pinMode" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"pinMode" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"__isoc99_scanf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"analogRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"digitalRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"adc_key_in" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"adc_key_val" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"get_key" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"analogRead" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__isoc99_scanf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"atoi" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"toUInt" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"bigTriggerPin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"setup" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"bolus" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"delayMicroseconds" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"digitalWrite" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			},
+			"doKeyAction" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"led_off" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"led_on" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"processSerial" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"checkTriggers" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"digitalRead" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"delayMicroseconds" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (float)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"usleep" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"digitalRead" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"__isoc99_scanf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"checkTriggers" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"digitalWrite" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			},
+			"setup" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"doKeyAction" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"get_key" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"getchar" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"Serial_available" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"Serial_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"gettimeofday" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (%struct.timeval*, %struct.timeval*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"millis" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"usecs" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"key" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			}
+		}
+	},
+	"keyDebounce" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"keyRepeatDelay" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"lastKeyRepeatAt" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"lcd" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"setup" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			}
+		}
+	},
+	"lcd_begin" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.LiquidCrystalStruct*, i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"lcd_clear" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.LiquidCrystalStruct*)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"lcd_print" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.LiquidCrystalStruct*, i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"lcd_setCursor" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (%struct.LiquidCrystalStruct*, i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"led_off" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"led_on" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"loop" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"processSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"usecs" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"mLBigBolus" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"mLBolus" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"checkTriggers" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			},
+			"doKeyAction" : 
+			{
+				"Count" : 6,
+				"Type" : "Data"
+			},
+			"loop" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"processSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"mLBolusStep" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"doKeyAction" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"mLBolusStepIdx" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"doKeyAction" : 
+			{
+				"Count" : 8,
+				"Type" : "Data"
+			}
+		}
+	},
+	"mLBolusSteps" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"doKeyAction" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"mLUsed" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 6,
+				"Type" : "Data"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"main" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32, i8**)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"loop" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"millis" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"gettimeofday" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"readKey" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"motorDirPin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"motorStepPin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"setup" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"pinMode" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void (i32, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"printf" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"setup" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"prevBigTrigger" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"prevKey" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"readKey" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"prevTrigger" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"printf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"Serial_available" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"Serial_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"Serial_write" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"analogRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"digitalRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"lcd_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"lcd_clear" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"lcd_print" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"lcd_setCursor" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"led_off" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"led_on" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"loop" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pinMode" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"processSerial" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"Serial_write" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			},
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"loop" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"toUInt" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 3,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"readKey" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"analogRead" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"doKeyAction" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"get_key" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"millis" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"readSerial" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"Serial_available" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"Serial_read" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"serialStr" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"loop" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"processSerial" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"readSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"serialStrLen" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"processSerial" : 
+			{
+				"Count" : 4,
+				"Type" : "Data"
+			},
+			"readSerial" : 
+			{
+				"Count" : 3,
+				"Type" : "Data"
+			}
+		}
+	},
+	"serialStrReady" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"loop" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			},
+			"processSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"readSerial" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			}
+		}
+	},
+	"setup" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"Serial_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"digitalWrite" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"lcd_begin" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"lcd_clear" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"lcd_print" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"main" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"pinMode" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"sprintf" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i8*, ...)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"updateScreen" : 
+			{
+				"Count" : 4,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"toUInt" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i8*, i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"atoi" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"processSerial" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"triggerPin" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 1,
+				"Type" : "Data"
+			},
+			"setup" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"uiState" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"doKeyAction" : 
+			{
+				"Count" : 5,
+				"Type" : "Data"
+			},
+			"updateScreen" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	},
+	"updateScreen" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "void ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"checkTriggers" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			},
+			"doKeyAction" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			},
+			"lcd_clear" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"lcd_print" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"lcd_setCursor" : 
+			{
+				"Count" : 2,
+				"Type" : "Callee"
+			},
+			"processSerial" : 
+			{
+				"Count" : 3,
+				"Type" : "Caller"
+			},
+			"sprintf" : 
+			{
+				"Count" : 4,
+				"Type" : "Callee"
+			}
+		}
+	},
+	"usecs" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 ()*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"gettimeofday" : 
+			{
+				"Count" : 1,
+				"Type" : "Callee"
+			},
+			"loop" : 
+			{
+				"Count" : 2,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"usleep" : 
+	{
+		"Attr" : 
+		{
+			"Address Taken" : false,
+			"LLVM_Type" : "i32 (i32)*",
+			"Type" : "Function"
+		},
+		"Connections" : 
+		{
+			"delayMicroseconds" : 
+			{
+				"Count" : 1,
+				"Type" : "Caller"
+			}
+		}
+	},
+	"ustepsPerML" : 
+	{
+		"Attr" : 
+		{
+			"Size" : 4,
+			"Type" : "Global"
+		},
+		"Connections" : 
+		{
+			"bolus" : 
+			{
+				"Count" : 2,
+				"Type" : "Data"
+			}
+		}
+	}
+}
