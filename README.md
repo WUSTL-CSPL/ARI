@@ -1,7 +1,7 @@
 
 # ARI: Attestation of Real-time Mission Execution Integrity
 
-Jinwen Wang, Jinwen Wang, Yujie Wang, Ao Li, Yang Xiao, Ruide Zhang, Wenjing Lou, Y. Thomas Hou, Ning Zhang. "ARI: Attestation of Real-time Mission Execution Integrity." 2023 USENIX Security Symposium.
+Jinwen Wang, Yujie Wang, Ao Li, Yang Xiao, Ruide Zhang, Wenjing Lou, Y. Thomas Hou, Ning Zhang. "ARI: Attestation of Real-time Mission Execution Integrity." 2023 USENIX Security Symposium.
 
 ## Project Structure
 The main ARI codes are distributed in directory structure as follows (this graph is only the main roadmap).
@@ -38,7 +38,7 @@ $ wget http://launchpadlibrarian.net/356067403/gcc-5-aarch64-linux-gnu_5.4.0-6ub
 $ sudo dpkg -i ./gcc-5-aarch64-linux-gnu_5.4.0-6ubuntu1~16.04.9cross1_amd64.deb
 ```
 ## Building ARI
-To setup RT-TEE for the first time, clone the repo and follow next steps. REPO_ROOT is the path of RT-TEE root directory (ari_dir  is the root directory of ARI project. ).
+To setup ARI for the first time, clone the repo and follow next steps. REPO_ROOT is the path of RT-TEE root directory (ari_dir  is the root directory of ARI project. ).
 1. Build LLVM
 ```
 $ git clone https://github.com/WUSTL-CSPL/ARI.git  
